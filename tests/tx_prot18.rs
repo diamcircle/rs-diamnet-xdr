@@ -5,11 +5,11 @@
 #![cfg(all(feature = "std", feature = "base64"))]
 
 #[cfg(feature = "curr")]
-use stellar_xdr::curr as stellar_xdr;
+use diamcircle_xdr::curr as diamcircle_xdr;
 #[cfg(feature = "next")]
-use stellar_xdr::next as stellar_xdr;
+use diamcircle_xdr::next as diamcircle_xdr;
 
-use stellar_xdr::{Error, Limits, OperationBody, ReadXdr, SequenceNumber, TransactionEnvelope};
+use diamcircle_xdr::{Error, Limits, OperationBody, ReadXdr, SequenceNumber, TransactionEnvelope};
 
 #[test]
 fn test_parse_pubnet_v18_tx() -> Result<(), Error> {

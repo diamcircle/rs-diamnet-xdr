@@ -1,9 +1,9 @@
 #![cfg(feature = "curr")]
 #![cfg(feature = "std")]
 
-use stellar_xdr::curr as stellar_xdr;
+use diamcircle_xdr::curr as diamcircle_xdr;
 
-use stellar_xdr::{
+use diamcircle_xdr::{
     AccountId, AssetCode, AssetCode12, AssetCode4, Error, Hash, MuxedAccount, MuxedAccountMed25519,
     NodeId, PublicKey, ScAddress, SignerKey, SignerKeyEd25519SignedPayload, Uint256,
 };

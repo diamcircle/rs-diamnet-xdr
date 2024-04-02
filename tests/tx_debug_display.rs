@@ -4,11 +4,11 @@
 ))]
 
 #[cfg(feature = "curr")]
-use stellar_xdr::curr as stellar_xdr;
+use diamcircle_xdr::curr as diamcircle_xdr;
 #[cfg(feature = "next")]
-use stellar_xdr::next as stellar_xdr;
+use diamcircle_xdr::next as diamcircle_xdr;
 
-use stellar_xdr::{BytesM, Error, Hash, StringM, VecM};
+use diamcircle_xdr::{BytesM, Error, Hash, StringM, VecM};
 
 #[test]
 fn test_debug() {

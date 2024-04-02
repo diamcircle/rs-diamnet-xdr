@@ -1,67 +1,67 @@
 // Module  is generated from:
-//  xdr/curr/Stellar-SCP.x
-//  xdr/curr/Stellar-contract-config-setting.x
-//  xdr/curr/Stellar-contract-env-meta.x
-//  xdr/curr/Stellar-contract-meta.x
-//  xdr/curr/Stellar-contract-spec.x
-//  xdr/curr/Stellar-contract.x
-//  xdr/curr/Stellar-internal.x
-//  xdr/curr/Stellar-ledger-entries.x
-//  xdr/curr/Stellar-ledger.x
-//  xdr/curr/Stellar-overlay.x
-//  xdr/curr/Stellar-transaction.x
-//  xdr/curr/Stellar-types.x
+//  xdr/curr/diamcircle-SCP.x
+//  xdr/curr/diamcircle-contract-config-setting.x
+//  xdr/curr/diamcircle-contract-env-meta.x
+//  xdr/curr/diamcircle-contract-meta.x
+//  xdr/curr/diamcircle-contract-spec.x
+//  xdr/curr/diamcircle-contract.x
+//  xdr/curr/diamcircle-internal.x
+//  xdr/curr/diamcircle-ledger-entries.x
+//  xdr/curr/diamcircle-ledger.x
+//  xdr/curr/diamcircle-overlay.x
+//  xdr/curr/diamcircle-transaction.x
+//  xdr/curr/diamcircle-types.x
 
 #![allow(clippy::missing_errors_doc, clippy::unreadable_literal)]
 
 /// `XDR_FILES_SHA256` is a list of pairs of source files and their SHA256 hashes.
 pub const XDR_FILES_SHA256: [(&str, &str); 12] = [
     (
-        "xdr/curr/Stellar-SCP.x",
+        "xdr/curr/diamcircle-SCP.x",
         "8f32b04d008f8bc33b8843d075e69837231a673691ee41d8b821ca229a6e802a",
     ),
     (
-        "xdr/curr/Stellar-contract-config-setting.x",
+        "xdr/curr/diamcircle-contract-config-setting.x",
         "fc42980e8710514679477f767ecad6f9348c38d24b1e4476fdd7e73e8e672ea8",
     ),
     (
-        "xdr/curr/Stellar-contract-env-meta.x",
+        "xdr/curr/diamcircle-contract-env-meta.x",
         "928a30de814ee589bc1d2aadd8dd81c39f71b7e6f430f56974505ccb1f49654b",
     ),
     (
-        "xdr/curr/Stellar-contract-meta.x",
+        "xdr/curr/diamcircle-contract-meta.x",
         "f01532c11ca044e19d9f9f16fe373e9af64835da473be556b9a807ee3319ae0d",
     ),
     (
-        "xdr/curr/Stellar-contract-spec.x",
+        "xdr/curr/diamcircle-contract-spec.x",
         "c7ffa21d2e91afb8e666b33524d307955426ff553a486d670c29217ed9888d49",
     ),
     (
-        "xdr/curr/Stellar-contract.x",
+        "xdr/curr/diamcircle-contract.x",
         "7f665e4103e146a88fcdabce879aaaacd3bf9283feb194cc47ff986264c1e315",
     ),
     (
-        "xdr/curr/Stellar-internal.x",
+        "xdr/curr/diamcircle-internal.x",
         "227835866c1b2122d1eaf28839ba85ea7289d1cb681dda4ca619c2da3d71fe00",
     ),
     (
-        "xdr/curr/Stellar-ledger-entries.x",
+        "xdr/curr/diamcircle-ledger-entries.x",
         "4f8f2324f567a40065f54f696ea1428740f043ea4154f5986d9f499ad00ac333",
     ),
     (
-        "xdr/curr/Stellar-ledger.x",
+        "xdr/curr/diamcircle-ledger.x",
         "888152fb940b79a01ac00a5218ca91360cb0f01af7acc030d5805ebfec280203",
     ),
     (
-        "xdr/curr/Stellar-overlay.x",
+        "xdr/curr/diamcircle-overlay.x",
         "de3957c58b96ae07968b3d3aebea84f83603e95322d1fa336360e13e3aba737a",
     ),
     (
-        "xdr/curr/Stellar-transaction.x",
+        "xdr/curr/diamcircle-transaction.x",
         "0d2b35a331a540b48643925d0869857236eb2487c02d340ea32e365e784ea2b8",
     ),
     (
-        "xdr/curr/Stellar-types.x",
+        "xdr/curr/diamcircle-types.x",
         "6e3b13f0d3e360b09fa5e2b0e55d43f4d974a769df66afb34e8aecbb329d3f15",
     ),
 ];
@@ -8200,7 +8200,7 @@ impl WriteXdr for Int256Parts {
 /// enum ContractExecutableType
 /// {
 ///     CONTRACT_EXECUTABLE_WASM = 0,
-///     CONTRACT_EXECUTABLE_STELLAR_ASSET = 1
+///     CONTRACT_EXECUTABLE_diamcircle_ASSET = 1
 /// };
 /// ```
 ///
@@ -8215,21 +8215,21 @@ impl WriteXdr for Int256Parts {
 #[repr(i32)]
 pub enum ContractExecutableType {
     Wasm = 0,
-    StellarAsset = 1,
+    diamcircleAsset = 1,
 }
 
 impl ContractExecutableType {
     pub const VARIANTS: [ContractExecutableType; 2] = [
         ContractExecutableType::Wasm,
-        ContractExecutableType::StellarAsset,
+        ContractExecutableType::diamcircleAsset,
     ];
-    pub const VARIANTS_STR: [&'static str; 2] = ["Wasm", "StellarAsset"];
+    pub const VARIANTS_STR: [&'static str; 2] = ["Wasm", "diamcircleAsset"];
 
     #[must_use]
     pub const fn name(&self) -> &'static str {
         match self {
             Self::Wasm => "Wasm",
-            Self::StellarAsset => "StellarAsset",
+            Self::diamcircleAsset => "diamcircleAsset",
         }
     }
 
@@ -8266,7 +8266,7 @@ impl TryFrom<i32> for ContractExecutableType {
     fn try_from(i: i32) -> Result<Self> {
         let e = match i {
             0 => ContractExecutableType::Wasm,
-            1 => ContractExecutableType::StellarAsset,
+            1 => ContractExecutableType::diamcircleAsset,
             #[allow(unreachable_patterns)]
             _ => return Err(Error::Invalid),
         };
@@ -8309,7 +8309,7 @@ impl WriteXdr for ContractExecutableType {
 /// {
 /// case CONTRACT_EXECUTABLE_WASM:
 ///     Hash wasm_hash;
-/// case CONTRACT_EXECUTABLE_STELLAR_ASSET:
+/// case CONTRACT_EXECUTABLE_diamcircle_ASSET:
 ///     void;
 /// };
 /// ```
@@ -8325,21 +8325,21 @@ impl WriteXdr for ContractExecutableType {
 #[allow(clippy::large_enum_variant)]
 pub enum ContractExecutable {
     Wasm(Hash),
-    StellarAsset,
+    diamcircleAsset,
 }
 
 impl ContractExecutable {
     pub const VARIANTS: [ContractExecutableType; 2] = [
         ContractExecutableType::Wasm,
-        ContractExecutableType::StellarAsset,
+        ContractExecutableType::diamcircleAsset,
     ];
-    pub const VARIANTS_STR: [&'static str; 2] = ["Wasm", "StellarAsset"];
+    pub const VARIANTS_STR: [&'static str; 2] = ["Wasm", "diamcircleAsset"];
 
     #[must_use]
     pub const fn name(&self) -> &'static str {
         match self {
             Self::Wasm(_) => "Wasm",
-            Self::StellarAsset => "StellarAsset",
+            Self::diamcircleAsset => "diamcircleAsset",
         }
     }
 
@@ -8348,7 +8348,7 @@ impl ContractExecutable {
         #[allow(clippy::match_same_arms)]
         match self {
             Self::Wasm(_) => ContractExecutableType::Wasm,
-            Self::StellarAsset => ContractExecutableType::StellarAsset,
+            Self::diamcircleAsset => ContractExecutableType::diamcircleAsset,
         }
     }
 
@@ -8388,7 +8388,7 @@ impl ReadXdr for ContractExecutable {
             #[allow(clippy::match_same_arms, clippy::match_wildcard_for_single_variants)]
             let v = match dv {
                 ContractExecutableType::Wasm => Self::Wasm(Hash::read_xdr(r)?),
-                ContractExecutableType::StellarAsset => Self::StellarAsset,
+                ContractExecutableType::diamcircleAsset => Self::diamcircleAsset,
                 #[allow(unreachable_patterns)]
                 _ => return Err(Error::Invalid),
             };
@@ -8405,7 +8405,7 @@ impl WriteXdr for ContractExecutable {
             #[allow(clippy::match_same_arms)]
             match self {
                 Self::Wasm(v) => v.write_xdr(w)?,
-                Self::StellarAsset => ().write_xdr(w)?,
+                Self::diamcircleAsset => ().write_xdr(w)?,
             };
             Ok(())
         })
@@ -9708,7 +9708,7 @@ impl WriteXdr for StoredTransactionSet {
 /// {
 /// 	StoredTransactionSet txSet;
 /// 	uint32 ledgerSeq;
-/// 	StellarValue scpValue;
+/// 	diamcircleValue scpValue;
 /// };
 /// ```
 ///
@@ -9722,7 +9722,7 @@ impl WriteXdr for StoredTransactionSet {
 pub struct StoredDebugTransactionSet {
     pub tx_set: StoredTransactionSet,
     pub ledger_seq: u32,
-    pub scp_value: StellarValue,
+    pub scp_value: diamcircleValue,
 }
 
 impl ReadXdr for StoredDebugTransactionSet {
@@ -9732,7 +9732,7 @@ impl ReadXdr for StoredDebugTransactionSet {
             Ok(Self {
                 tx_set: StoredTransactionSet::read_xdr(r)?,
                 ledger_seq: u32::read_xdr(r)?,
-                scp_value: StellarValue::read_xdr(r)?,
+                scp_value: diamcircleValue::read_xdr(r)?,
             })
         })
     }
@@ -16883,13 +16883,13 @@ impl AsRef<[u8]> for UpgradeType {
     }
 }
 
-/// StellarValueType is an XDR Enum defines as:
+/// diamcircleValueType is an XDR Enum defines as:
 ///
 /// ```text
-/// enum StellarValueType
+/// enum diamcircleValueType
 /// {
-///     STELLAR_VALUE_BASIC = 0,
-///     STELLAR_VALUE_SIGNED = 1
+///     diamcircle_VALUE_BASIC = 0,
+///     diamcircle_VALUE_SIGNED = 1
 /// };
 /// ```
 ///
@@ -16902,13 +16902,13 @@ impl AsRef<[u8]> for UpgradeType {
     serde(rename_all = "snake_case")
 )]
 #[repr(i32)]
-pub enum StellarValueType {
+pub enum diamcircleValueType {
     Basic = 0,
     Signed = 1,
 }
 
-impl StellarValueType {
-    pub const VARIANTS: [StellarValueType; 2] = [StellarValueType::Basic, StellarValueType::Signed];
+impl diamcircleValueType {
+    pub const VARIANTS: [diamcircleValueType; 2] = [diamcircleValueType::Basic, diamcircleValueType::Signed];
     pub const VARIANTS_STR: [&'static str; 2] = ["Basic", "Signed"];
 
     #[must_use]
@@ -16920,39 +16920,39 @@ impl StellarValueType {
     }
 
     #[must_use]
-    pub const fn variants() -> [StellarValueType; 2] {
+    pub const fn variants() -> [diamcircleValueType; 2] {
         Self::VARIANTS
     }
 }
 
-impl Name for StellarValueType {
+impl Name for diamcircleValueType {
     #[must_use]
     fn name(&self) -> &'static str {
         Self::name(self)
     }
 }
 
-impl Variants<StellarValueType> for StellarValueType {
-    fn variants() -> slice::Iter<'static, StellarValueType> {
+impl Variants<diamcircleValueType> for diamcircleValueType {
+    fn variants() -> slice::Iter<'static, diamcircleValueType> {
         Self::VARIANTS.iter()
     }
 }
 
-impl Enum for StellarValueType {}
+impl Enum for diamcircleValueType {}
 
-impl fmt::Display for StellarValueType {
+impl fmt::Display for diamcircleValueType {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.write_str(self.name())
     }
 }
 
-impl TryFrom<i32> for StellarValueType {
+impl TryFrom<i32> for diamcircleValueType {
     type Error = Error;
 
     fn try_from(i: i32) -> Result<Self> {
         let e = match i {
-            0 => StellarValueType::Basic,
-            1 => StellarValueType::Signed,
+            0 => diamcircleValueType::Basic,
+            1 => diamcircleValueType::Signed,
             #[allow(unreachable_patterns)]
             _ => return Err(Error::Invalid),
         };
@@ -16960,14 +16960,14 @@ impl TryFrom<i32> for StellarValueType {
     }
 }
 
-impl From<StellarValueType> for i32 {
+impl From<diamcircleValueType> for i32 {
     #[must_use]
-    fn from(e: StellarValueType) -> Self {
+    fn from(e: diamcircleValueType) -> Self {
         e as Self
     }
 }
 
-impl ReadXdr for StellarValueType {
+impl ReadXdr for diamcircleValueType {
     #[cfg(feature = "std")]
     fn read_xdr<R: Read>(r: &mut Limited<R>) -> Result<Self> {
         r.with_limited_depth(|r| {
@@ -16978,7 +16978,7 @@ impl ReadXdr for StellarValueType {
     }
 }
 
-impl WriteXdr for StellarValueType {
+impl WriteXdr for diamcircleValueType {
     #[cfg(feature = "std")]
     fn write_xdr<W: Write>(&self, w: &mut Limited<W>) -> Result<()> {
         w.with_limited_depth(|w| {
@@ -17033,19 +17033,19 @@ impl WriteXdr for LedgerCloseValueSignature {
     }
 }
 
-/// StellarValueExt is an XDR NestedUnion defines as:
+/// diamcircleValueExt is an XDR NestedUnion defines as:
 ///
 /// ```text
-/// union switch (StellarValueType v)
+/// union switch (diamcircleValueType v)
 ///     {
-///     case STELLAR_VALUE_BASIC:
+///     case diamcircle_VALUE_BASIC:
 ///         void;
-///     case STELLAR_VALUE_SIGNED:
+///     case diamcircle_VALUE_SIGNED:
 ///         LedgerCloseValueSignature lcValueSignature;
 ///     }
 /// ```
 ///
-// union with discriminant StellarValueType
+// union with discriminant diamcircleValueType
 #[derive(Clone, Debug, Hash, PartialEq, Eq, PartialOrd, Ord)]
 #[cfg_attr(feature = "arbitrary", derive(Arbitrary))]
 #[cfg_attr(
@@ -17054,13 +17054,13 @@ impl WriteXdr for LedgerCloseValueSignature {
     serde(rename_all = "snake_case")
 )]
 #[allow(clippy::large_enum_variant)]
-pub enum StellarValueExt {
+pub enum diamcircleValueExt {
     Basic,
     Signed(LedgerCloseValueSignature),
 }
 
-impl StellarValueExt {
-    pub const VARIANTS: [StellarValueType; 2] = [StellarValueType::Basic, StellarValueType::Signed];
+impl diamcircleValueExt {
+    pub const VARIANTS: [diamcircleValueType; 2] = [diamcircleValueType::Basic, diamcircleValueType::Signed];
     pub const VARIANTS_STR: [&'static str; 2] = ["Basic", "Signed"];
 
     #[must_use]
@@ -17072,51 +17072,51 @@ impl StellarValueExt {
     }
 
     #[must_use]
-    pub const fn discriminant(&self) -> StellarValueType {
+    pub const fn discriminant(&self) -> diamcircleValueType {
         #[allow(clippy::match_same_arms)]
         match self {
-            Self::Basic => StellarValueType::Basic,
-            Self::Signed(_) => StellarValueType::Signed,
+            Self::Basic => diamcircleValueType::Basic,
+            Self::Signed(_) => diamcircleValueType::Signed,
         }
     }
 
     #[must_use]
-    pub const fn variants() -> [StellarValueType; 2] {
+    pub const fn variants() -> [diamcircleValueType; 2] {
         Self::VARIANTS
     }
 }
 
-impl Name for StellarValueExt {
+impl Name for diamcircleValueExt {
     #[must_use]
     fn name(&self) -> &'static str {
         Self::name(self)
     }
 }
 
-impl Discriminant<StellarValueType> for StellarValueExt {
+impl Discriminant<diamcircleValueType> for diamcircleValueExt {
     #[must_use]
-    fn discriminant(&self) -> StellarValueType {
+    fn discriminant(&self) -> diamcircleValueType {
         Self::discriminant(self)
     }
 }
 
-impl Variants<StellarValueType> for StellarValueExt {
-    fn variants() -> slice::Iter<'static, StellarValueType> {
+impl Variants<diamcircleValueType> for diamcircleValueExt {
+    fn variants() -> slice::Iter<'static, diamcircleValueType> {
         Self::VARIANTS.iter()
     }
 }
 
-impl Union<StellarValueType> for StellarValueExt {}
+impl Union<diamcircleValueType> for diamcircleValueExt {}
 
-impl ReadXdr for StellarValueExt {
+impl ReadXdr for diamcircleValueExt {
     #[cfg(feature = "std")]
     fn read_xdr<R: Read>(r: &mut Limited<R>) -> Result<Self> {
         r.with_limited_depth(|r| {
-            let dv: StellarValueType = <StellarValueType as ReadXdr>::read_xdr(r)?;
+            let dv: diamcircleValueType = <diamcircleValueType as ReadXdr>::read_xdr(r)?;
             #[allow(clippy::match_same_arms, clippy::match_wildcard_for_single_variants)]
             let v = match dv {
-                StellarValueType::Basic => Self::Basic,
-                StellarValueType::Signed => Self::Signed(LedgerCloseValueSignature::read_xdr(r)?),
+                diamcircleValueType::Basic => Self::Basic,
+                diamcircleValueType::Signed => Self::Signed(LedgerCloseValueSignature::read_xdr(r)?),
                 #[allow(unreachable_patterns)]
                 _ => return Err(Error::Invalid),
             };
@@ -17125,7 +17125,7 @@ impl ReadXdr for StellarValueExt {
     }
 }
 
-impl WriteXdr for StellarValueExt {
+impl WriteXdr for diamcircleValueExt {
     #[cfg(feature = "std")]
     fn write_xdr<W: Write>(&self, w: &mut Limited<W>) -> Result<()> {
         w.with_limited_depth(|w| {
@@ -17140,10 +17140,10 @@ impl WriteXdr for StellarValueExt {
     }
 }
 
-/// StellarValue is an XDR Struct defines as:
+/// diamcircleValue is an XDR Struct defines as:
 ///
 /// ```text
-/// struct StellarValue
+/// struct diamcircleValue
 /// {
 ///     Hash txSetHash;      // transaction set to apply to previous ledger
 ///     TimePoint closeTime; // network close time
@@ -17156,11 +17156,11 @@ impl WriteXdr for StellarValueExt {
 ///     UpgradeType upgrades<6>;
 ///
 ///     // reserved for future use
-///     union switch (StellarValueType v)
+///     union switch (diamcircleValueType v)
 ///     {
-///     case STELLAR_VALUE_BASIC:
+///     case diamcircle_VALUE_BASIC:
 ///         void;
-///     case STELLAR_VALUE_SIGNED:
+///     case diamcircle_VALUE_SIGNED:
 ///         LedgerCloseValueSignature lcValueSignature;
 ///     }
 ///     ext;
@@ -17174,14 +17174,14 @@ impl WriteXdr for StellarValueExt {
     derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "snake_case")
 )]
-pub struct StellarValue {
+pub struct diamcircleValue {
     pub tx_set_hash: Hash,
     pub close_time: TimePoint,
     pub upgrades: VecM<UpgradeType, 6>,
-    pub ext: StellarValueExt,
+    pub ext: diamcircleValueExt,
 }
 
-impl ReadXdr for StellarValue {
+impl ReadXdr for diamcircleValue {
     #[cfg(feature = "std")]
     fn read_xdr<R: Read>(r: &mut Limited<R>) -> Result<Self> {
         r.with_limited_depth(|r| {
@@ -17189,13 +17189,13 @@ impl ReadXdr for StellarValue {
                 tx_set_hash: Hash::read_xdr(r)?,
                 close_time: TimePoint::read_xdr(r)?,
                 upgrades: VecM::<UpgradeType, 6>::read_xdr(r)?,
-                ext: StellarValueExt::read_xdr(r)?,
+                ext: diamcircleValueExt::read_xdr(r)?,
             })
         })
     }
 }
 
-impl WriteXdr for StellarValue {
+impl WriteXdr for diamcircleValue {
     #[cfg(feature = "std")]
     fn write_xdr<W: Write>(&self, w: &mut Limited<W>) -> Result<()> {
         w.with_limited_depth(|w| {
@@ -17594,7 +17594,7 @@ impl WriteXdr for LedgerHeaderExt {
 /// {
 ///     uint32 ledgerVersion;    // the protocol version of the ledger
 ///     Hash previousLedgerHash; // hash of the previous ledger header
-///     StellarValue scpValue;   // what consensus agreed to
+///     diamcircleValue scpValue;   // what consensus agreed to
 ///     Hash txSetResultHash;    // the TransactionResultSet that led to this ledger
 ///     Hash bucketListHash;     // hash of the ledger state
 ///
@@ -17641,7 +17641,7 @@ impl WriteXdr for LedgerHeaderExt {
 pub struct LedgerHeader {
     pub ledger_version: u32,
     pub previous_ledger_hash: Hash,
-    pub scp_value: StellarValue,
+    pub scp_value: diamcircleValue,
     pub tx_set_result_hash: Hash,
     pub bucket_list_hash: Hash,
     pub ledger_seq: u32,
@@ -17663,7 +17663,7 @@ impl ReadXdr for LedgerHeader {
             Ok(Self {
                 ledger_version: u32::read_xdr(r)?,
                 previous_ledger_hash: Hash::read_xdr(r)?,
-                scp_value: StellarValue::read_xdr(r)?,
+                scp_value: diamcircleValue::read_xdr(r)?,
                 tx_set_result_hash: Hash::read_xdr(r)?,
                 bucket_list_hash: Hash::read_xdr(r)?,
                 ledger_seq: u32::read_xdr(r)?,
@@ -23861,10 +23861,10 @@ impl WriteXdr for FloodDemand {
     }
 }
 
-/// StellarMessage is an XDR Union defines as:
+/// diamcircleMessage is an XDR Union defines as:
 ///
 /// ```text
-/// union StellarMessage switch (MessageType type)
+/// union diamcircleMessage switch (MessageType type)
 /// {
 /// case ERROR_MSG:
 ///     Error error;
@@ -23925,7 +23925,7 @@ impl WriteXdr for FloodDemand {
     serde(rename_all = "snake_case")
 )]
 #[allow(clippy::large_enum_variant)]
-pub enum StellarMessage {
+pub enum diamcircleMessage {
     ErrorMsg(SError),
     Hello(Hello),
     Auth(Auth),
@@ -23948,7 +23948,7 @@ pub enum StellarMessage {
     FloodDemand(FloodDemand),
 }
 
-impl StellarMessage {
+impl diamcircleMessage {
     pub const VARIANTS: [MessageType; 20] = [
         MessageType::ErrorMsg,
         MessageType::Hello,
@@ -24053,29 +24053,29 @@ impl StellarMessage {
     }
 }
 
-impl Name for StellarMessage {
+impl Name for diamcircleMessage {
     #[must_use]
     fn name(&self) -> &'static str {
         Self::name(self)
     }
 }
 
-impl Discriminant<MessageType> for StellarMessage {
+impl Discriminant<MessageType> for diamcircleMessage {
     #[must_use]
     fn discriminant(&self) -> MessageType {
         Self::discriminant(self)
     }
 }
 
-impl Variants<MessageType> for StellarMessage {
+impl Variants<MessageType> for diamcircleMessage {
     fn variants() -> slice::Iter<'static, MessageType> {
         Self::VARIANTS.iter()
     }
 }
 
-impl Union<MessageType> for StellarMessage {}
+impl Union<MessageType> for diamcircleMessage {}
 
-impl ReadXdr for StellarMessage {
+impl ReadXdr for diamcircleMessage {
     #[cfg(feature = "std")]
     fn read_xdr<R: Read>(r: &mut Limited<R>) -> Result<Self> {
         r.with_limited_depth(|r| {
@@ -24118,7 +24118,7 @@ impl ReadXdr for StellarMessage {
     }
 }
 
-impl WriteXdr for StellarMessage {
+impl WriteXdr for diamcircleMessage {
     #[cfg(feature = "std")]
     fn write_xdr<W: Write>(&self, w: &mut Limited<W>) -> Result<()> {
         w.with_limited_depth(|w| {
@@ -24157,7 +24157,7 @@ impl WriteXdr for StellarMessage {
 /// struct
 ///     {
 ///         uint64 sequence;
-///         StellarMessage message;
+///         diamcircleMessage message;
 ///         HmacSha256Mac mac;
 ///     }
 /// ```
@@ -24171,7 +24171,7 @@ impl WriteXdr for StellarMessage {
 )]
 pub struct AuthenticatedMessageV0 {
     pub sequence: u64,
-    pub message: StellarMessage,
+    pub message: diamcircleMessage,
     pub mac: HmacSha256Mac,
 }
 
@@ -24181,7 +24181,7 @@ impl ReadXdr for AuthenticatedMessageV0 {
         r.with_limited_depth(|r| {
             Ok(Self {
                 sequence: u64::read_xdr(r)?,
-                message: StellarMessage::read_xdr(r)?,
+                message: diamcircleMessage::read_xdr(r)?,
                 mac: HmacSha256Mac::read_xdr(r)?,
             })
         })
@@ -24209,7 +24209,7 @@ impl WriteXdr for AuthenticatedMessageV0 {
 ///     struct
 ///     {
 ///         uint64 sequence;
-///         StellarMessage message;
+///         diamcircleMessage message;
 ///         HmacSha256Mac mac;
 ///     } v0;
 /// };
@@ -42604,10 +42604,10 @@ pub enum TypeVariant {
     LedgerKeyTtl,
     EnvelopeType,
     UpgradeType,
-    StellarValueType,
+    diamcircleValueType,
     LedgerCloseValueSignature,
-    StellarValue,
-    StellarValueExt,
+    diamcircleValue,
+    diamcircleValueExt,
     LedgerHeaderFlags,
     LedgerHeaderExtensionV1,
     LedgerHeaderExtensionV1Ext,
@@ -42691,7 +42691,7 @@ pub enum TypeVariant {
     FloodAdvert,
     TxDemandVector,
     FloodDemand,
-    StellarMessage,
+    diamcircleMessage,
     AuthenticatedMessage,
     AuthenticatedMessageV0,
     LiquidityPoolParameters,
@@ -43030,10 +43030,10 @@ impl TypeVariant {
         TypeVariant::LedgerKeyTtl,
         TypeVariant::EnvelopeType,
         TypeVariant::UpgradeType,
-        TypeVariant::StellarValueType,
+        TypeVariant::diamcircleValueType,
         TypeVariant::LedgerCloseValueSignature,
-        TypeVariant::StellarValue,
-        TypeVariant::StellarValueExt,
+        TypeVariant::diamcircleValue,
+        TypeVariant::diamcircleValueExt,
         TypeVariant::LedgerHeaderFlags,
         TypeVariant::LedgerHeaderExtensionV1,
         TypeVariant::LedgerHeaderExtensionV1Ext,
@@ -43117,7 +43117,7 @@ impl TypeVariant {
         TypeVariant::FloodAdvert,
         TypeVariant::TxDemandVector,
         TypeVariant::FloodDemand,
-        TypeVariant::StellarMessage,
+        TypeVariant::diamcircleMessage,
         TypeVariant::AuthenticatedMessage,
         TypeVariant::AuthenticatedMessageV0,
         TypeVariant::LiquidityPoolParameters,
@@ -43454,10 +43454,10 @@ impl TypeVariant {
         "LedgerKeyTtl",
         "EnvelopeType",
         "UpgradeType",
-        "StellarValueType",
+        "diamcircleValueType",
         "LedgerCloseValueSignature",
-        "StellarValue",
-        "StellarValueExt",
+        "diamcircleValue",
+        "diamcircleValueExt",
         "LedgerHeaderFlags",
         "LedgerHeaderExtensionV1",
         "LedgerHeaderExtensionV1Ext",
@@ -43541,7 +43541,7 @@ impl TypeVariant {
         "FloodAdvert",
         "TxDemandVector",
         "FloodDemand",
-        "StellarMessage",
+        "diamcircleMessage",
         "AuthenticatedMessage",
         "AuthenticatedMessageV0",
         "LiquidityPoolParameters",
@@ -43884,10 +43884,10 @@ impl TypeVariant {
             Self::LedgerKeyTtl => "LedgerKeyTtl",
             Self::EnvelopeType => "EnvelopeType",
             Self::UpgradeType => "UpgradeType",
-            Self::StellarValueType => "StellarValueType",
+            Self::diamcircleValueType => "diamcircleValueType",
             Self::LedgerCloseValueSignature => "LedgerCloseValueSignature",
-            Self::StellarValue => "StellarValue",
-            Self::StellarValueExt => "StellarValueExt",
+            Self::diamcircleValue => "diamcircleValue",
+            Self::diamcircleValueExt => "diamcircleValueExt",
             Self::LedgerHeaderFlags => "LedgerHeaderFlags",
             Self::LedgerHeaderExtensionV1 => "LedgerHeaderExtensionV1",
             Self::LedgerHeaderExtensionV1Ext => "LedgerHeaderExtensionV1Ext",
@@ -43971,7 +43971,7 @@ impl TypeVariant {
             Self::FloodAdvert => "FloodAdvert",
             Self::TxDemandVector => "TxDemandVector",
             Self::FloodDemand => "FloodDemand",
-            Self::StellarMessage => "StellarMessage",
+            Self::diamcircleMessage => "diamcircleMessage",
             Self::AuthenticatedMessage => "AuthenticatedMessage",
             Self::AuthenticatedMessageV0 => "AuthenticatedMessageV0",
             Self::LiquidityPoolParameters => "LiquidityPoolParameters",
@@ -44344,10 +44344,10 @@ impl core::str::FromStr for TypeVariant {
             "LedgerKeyTtl" => Ok(Self::LedgerKeyTtl),
             "EnvelopeType" => Ok(Self::EnvelopeType),
             "UpgradeType" => Ok(Self::UpgradeType),
-            "StellarValueType" => Ok(Self::StellarValueType),
+            "diamcircleValueType" => Ok(Self::diamcircleValueType),
             "LedgerCloseValueSignature" => Ok(Self::LedgerCloseValueSignature),
-            "StellarValue" => Ok(Self::StellarValue),
-            "StellarValueExt" => Ok(Self::StellarValueExt),
+            "diamcircleValue" => Ok(Self::diamcircleValue),
+            "diamcircleValueExt" => Ok(Self::diamcircleValueExt),
             "LedgerHeaderFlags" => Ok(Self::LedgerHeaderFlags),
             "LedgerHeaderExtensionV1" => Ok(Self::LedgerHeaderExtensionV1),
             "LedgerHeaderExtensionV1Ext" => Ok(Self::LedgerHeaderExtensionV1Ext),
@@ -44431,7 +44431,7 @@ impl core::str::FromStr for TypeVariant {
             "FloodAdvert" => Ok(Self::FloodAdvert),
             "TxDemandVector" => Ok(Self::TxDemandVector),
             "FloodDemand" => Ok(Self::FloodDemand),
-            "StellarMessage" => Ok(Self::StellarMessage),
+            "diamcircleMessage" => Ok(Self::diamcircleMessage),
             "AuthenticatedMessage" => Ok(Self::AuthenticatedMessage),
             "AuthenticatedMessageV0" => Ok(Self::AuthenticatedMessageV0),
             "LiquidityPoolParameters" => Ok(Self::LiquidityPoolParameters),
@@ -44787,10 +44787,10 @@ pub enum Type {
     LedgerKeyTtl(Box<LedgerKeyTtl>),
     EnvelopeType(Box<EnvelopeType>),
     UpgradeType(Box<UpgradeType>),
-    StellarValueType(Box<StellarValueType>),
+    diamcircleValueType(Box<diamcircleValueType>),
     LedgerCloseValueSignature(Box<LedgerCloseValueSignature>),
-    StellarValue(Box<StellarValue>),
-    StellarValueExt(Box<StellarValueExt>),
+    diamcircleValue(Box<diamcircleValue>),
+    diamcircleValueExt(Box<diamcircleValueExt>),
     LedgerHeaderFlags(Box<LedgerHeaderFlags>),
     LedgerHeaderExtensionV1(Box<LedgerHeaderExtensionV1>),
     LedgerHeaderExtensionV1Ext(Box<LedgerHeaderExtensionV1Ext>),
@@ -44874,7 +44874,7 @@ pub enum Type {
     FloodAdvert(Box<FloodAdvert>),
     TxDemandVector(Box<TxDemandVector>),
     FloodDemand(Box<FloodDemand>),
-    StellarMessage(Box<StellarMessage>),
+    diamcircleMessage(Box<diamcircleMessage>),
     AuthenticatedMessage(Box<AuthenticatedMessage>),
     AuthenticatedMessageV0(Box<AuthenticatedMessageV0>),
     LiquidityPoolParameters(Box<LiquidityPoolParameters>),
@@ -45213,10 +45213,10 @@ impl Type {
         TypeVariant::LedgerKeyTtl,
         TypeVariant::EnvelopeType,
         TypeVariant::UpgradeType,
-        TypeVariant::StellarValueType,
+        TypeVariant::diamcircleValueType,
         TypeVariant::LedgerCloseValueSignature,
-        TypeVariant::StellarValue,
-        TypeVariant::StellarValueExt,
+        TypeVariant::diamcircleValue,
+        TypeVariant::diamcircleValueExt,
         TypeVariant::LedgerHeaderFlags,
         TypeVariant::LedgerHeaderExtensionV1,
         TypeVariant::LedgerHeaderExtensionV1Ext,
@@ -45300,7 +45300,7 @@ impl Type {
         TypeVariant::FloodAdvert,
         TypeVariant::TxDemandVector,
         TypeVariant::FloodDemand,
-        TypeVariant::StellarMessage,
+        TypeVariant::diamcircleMessage,
         TypeVariant::AuthenticatedMessage,
         TypeVariant::AuthenticatedMessageV0,
         TypeVariant::LiquidityPoolParameters,
@@ -45637,10 +45637,10 @@ impl Type {
         "LedgerKeyTtl",
         "EnvelopeType",
         "UpgradeType",
-        "StellarValueType",
+        "diamcircleValueType",
         "LedgerCloseValueSignature",
-        "StellarValue",
-        "StellarValueExt",
+        "diamcircleValue",
+        "diamcircleValueExt",
         "LedgerHeaderFlags",
         "LedgerHeaderExtensionV1",
         "LedgerHeaderExtensionV1Ext",
@@ -45724,7 +45724,7 @@ impl Type {
         "FloodAdvert",
         "TxDemandVector",
         "FloodDemand",
-        "StellarMessage",
+        "diamcircleMessage",
         "AuthenticatedMessage",
         "AuthenticatedMessageV0",
         "LiquidityPoolParameters",
@@ -46551,9 +46551,9 @@ impl Type {
             TypeVariant::UpgradeType => {
                 r.with_limited_depth(|r| Ok(Self::UpgradeType(Box::new(UpgradeType::read_xdr(r)?))))
             }
-            TypeVariant::StellarValueType => r.with_limited_depth(|r| {
-                Ok(Self::StellarValueType(Box::new(
-                    StellarValueType::read_xdr(r)?,
+            TypeVariant::diamcircleValueType => r.with_limited_depth(|r| {
+                Ok(Self::diamcircleValueType(Box::new(
+                    diamcircleValueType::read_xdr(r)?,
                 )))
             }),
             TypeVariant::LedgerCloseValueSignature => r.with_limited_depth(|r| {
@@ -46561,11 +46561,11 @@ impl Type {
                     LedgerCloseValueSignature::read_xdr(r)?,
                 )))
             }),
-            TypeVariant::StellarValue => r.with_limited_depth(|r| {
-                Ok(Self::StellarValue(Box::new(StellarValue::read_xdr(r)?)))
+            TypeVariant::diamcircleValue => r.with_limited_depth(|r| {
+                Ok(Self::diamcircleValue(Box::new(diamcircleValue::read_xdr(r)?)))
             }),
-            TypeVariant::StellarValueExt => r.with_limited_depth(|r| {
-                Ok(Self::StellarValueExt(Box::new(StellarValueExt::read_xdr(
+            TypeVariant::diamcircleValueExt => r.with_limited_depth(|r| {
+                Ok(Self::diamcircleValueExt(Box::new(diamcircleValueExt::read_xdr(
                     r,
                 )?)))
             }),
@@ -46932,8 +46932,8 @@ impl Type {
             TypeVariant::FloodDemand => {
                 r.with_limited_depth(|r| Ok(Self::FloodDemand(Box::new(FloodDemand::read_xdr(r)?))))
             }
-            TypeVariant::StellarMessage => r.with_limited_depth(|r| {
-                Ok(Self::StellarMessage(Box::new(StellarMessage::read_xdr(r)?)))
+            TypeVariant::diamcircleMessage => r.with_limited_depth(|r| {
+                Ok(Self::diamcircleMessage(Box::new(diamcircleMessage::read_xdr(r)?)))
             }),
             TypeVariant::AuthenticatedMessage => r.with_limited_depth(|r| {
                 Ok(Self::AuthenticatedMessage(Box::new(
@@ -48429,21 +48429,21 @@ impl Type {
                 ReadXdrIter::<_, UpgradeType>::new(&mut r.inner, r.limits.clone())
                     .map(|r| r.map(|t| Self::UpgradeType(Box::new(t)))),
             ),
-            TypeVariant::StellarValueType => Box::new(
-                ReadXdrIter::<_, StellarValueType>::new(&mut r.inner, r.limits.clone())
-                    .map(|r| r.map(|t| Self::StellarValueType(Box::new(t)))),
+            TypeVariant::diamcircleValueType => Box::new(
+                ReadXdrIter::<_, diamcircleValueType>::new(&mut r.inner, r.limits.clone())
+                    .map(|r| r.map(|t| Self::diamcircleValueType(Box::new(t)))),
             ),
             TypeVariant::LedgerCloseValueSignature => Box::new(
                 ReadXdrIter::<_, LedgerCloseValueSignature>::new(&mut r.inner, r.limits.clone())
                     .map(|r| r.map(|t| Self::LedgerCloseValueSignature(Box::new(t)))),
             ),
-            TypeVariant::StellarValue => Box::new(
-                ReadXdrIter::<_, StellarValue>::new(&mut r.inner, r.limits.clone())
-                    .map(|r| r.map(|t| Self::StellarValue(Box::new(t)))),
+            TypeVariant::diamcircleValue => Box::new(
+                ReadXdrIter::<_, diamcircleValue>::new(&mut r.inner, r.limits.clone())
+                    .map(|r| r.map(|t| Self::diamcircleValue(Box::new(t)))),
             ),
-            TypeVariant::StellarValueExt => Box::new(
-                ReadXdrIter::<_, StellarValueExt>::new(&mut r.inner, r.limits.clone())
-                    .map(|r| r.map(|t| Self::StellarValueExt(Box::new(t)))),
+            TypeVariant::diamcircleValueExt => Box::new(
+                ReadXdrIter::<_, diamcircleValueExt>::new(&mut r.inner, r.limits.clone())
+                    .map(|r| r.map(|t| Self::diamcircleValueExt(Box::new(t)))),
             ),
             TypeVariant::LedgerHeaderFlags => Box::new(
                 ReadXdrIter::<_, LedgerHeaderFlags>::new(&mut r.inner, r.limits.clone())
@@ -48789,9 +48789,9 @@ impl Type {
                 ReadXdrIter::<_, FloodDemand>::new(&mut r.inner, r.limits.clone())
                     .map(|r| r.map(|t| Self::FloodDemand(Box::new(t)))),
             ),
-            TypeVariant::StellarMessage => Box::new(
-                ReadXdrIter::<_, StellarMessage>::new(&mut r.inner, r.limits.clone())
-                    .map(|r| r.map(|t| Self::StellarMessage(Box::new(t)))),
+            TypeVariant::diamcircleMessage => Box::new(
+                ReadXdrIter::<_, diamcircleMessage>::new(&mut r.inner, r.limits.clone())
+                    .map(|r| r.map(|t| Self::diamcircleMessage(Box::new(t)))),
             ),
             TypeVariant::AuthenticatedMessage => Box::new(
                 ReadXdrIter::<_, AuthenticatedMessage>::new(&mut r.inner, r.limits.clone())
@@ -50312,9 +50312,9 @@ impl Type {
                 ReadXdrIter::<_, Frame<UpgradeType>>::new(&mut r.inner, r.limits.clone())
                     .map(|r| r.map(|t| Self::UpgradeType(Box::new(t.0)))),
             ),
-            TypeVariant::StellarValueType => Box::new(
-                ReadXdrIter::<_, Frame<StellarValueType>>::new(&mut r.inner, r.limits.clone())
-                    .map(|r| r.map(|t| Self::StellarValueType(Box::new(t.0)))),
+            TypeVariant::diamcircleValueType => Box::new(
+                ReadXdrIter::<_, Frame<diamcircleValueType>>::new(&mut r.inner, r.limits.clone())
+                    .map(|r| r.map(|t| Self::diamcircleValueType(Box::new(t.0)))),
             ),
             TypeVariant::LedgerCloseValueSignature => Box::new(
                 ReadXdrIter::<_, Frame<LedgerCloseValueSignature>>::new(
@@ -50323,13 +50323,13 @@ impl Type {
                 )
                 .map(|r| r.map(|t| Self::LedgerCloseValueSignature(Box::new(t.0)))),
             ),
-            TypeVariant::StellarValue => Box::new(
-                ReadXdrIter::<_, Frame<StellarValue>>::new(&mut r.inner, r.limits.clone())
-                    .map(|r| r.map(|t| Self::StellarValue(Box::new(t.0)))),
+            TypeVariant::diamcircleValue => Box::new(
+                ReadXdrIter::<_, Frame<diamcircleValue>>::new(&mut r.inner, r.limits.clone())
+                    .map(|r| r.map(|t| Self::diamcircleValue(Box::new(t.0)))),
             ),
-            TypeVariant::StellarValueExt => Box::new(
-                ReadXdrIter::<_, Frame<StellarValueExt>>::new(&mut r.inner, r.limits.clone())
-                    .map(|r| r.map(|t| Self::StellarValueExt(Box::new(t.0)))),
+            TypeVariant::diamcircleValueExt => Box::new(
+                ReadXdrIter::<_, Frame<diamcircleValueExt>>::new(&mut r.inner, r.limits.clone())
+                    .map(|r| r.map(|t| Self::diamcircleValueExt(Box::new(t.0)))),
             ),
             TypeVariant::LedgerHeaderFlags => Box::new(
                 ReadXdrIter::<_, Frame<LedgerHeaderFlags>>::new(&mut r.inner, r.limits.clone())
@@ -50723,9 +50723,9 @@ impl Type {
                 ReadXdrIter::<_, Frame<FloodDemand>>::new(&mut r.inner, r.limits.clone())
                     .map(|r| r.map(|t| Self::FloodDemand(Box::new(t.0)))),
             ),
-            TypeVariant::StellarMessage => Box::new(
-                ReadXdrIter::<_, Frame<StellarMessage>>::new(&mut r.inner, r.limits.clone())
-                    .map(|r| r.map(|t| Self::StellarMessage(Box::new(t.0)))),
+            TypeVariant::diamcircleMessage => Box::new(
+                ReadXdrIter::<_, Frame<diamcircleMessage>>::new(&mut r.inner, r.limits.clone())
+                    .map(|r| r.map(|t| Self::diamcircleMessage(Box::new(t.0)))),
             ),
             TypeVariant::AuthenticatedMessage => Box::new(
                 ReadXdrIter::<_, Frame<AuthenticatedMessage>>::new(&mut r.inner, r.limits.clone())
@@ -52295,21 +52295,21 @@ impl Type {
                 ReadXdrIter::<_, UpgradeType>::new(dec, r.limits.clone())
                     .map(|r| r.map(|t| Self::UpgradeType(Box::new(t)))),
             ),
-            TypeVariant::StellarValueType => Box::new(
-                ReadXdrIter::<_, StellarValueType>::new(dec, r.limits.clone())
-                    .map(|r| r.map(|t| Self::StellarValueType(Box::new(t)))),
+            TypeVariant::diamcircleValueType => Box::new(
+                ReadXdrIter::<_, diamcircleValueType>::new(dec, r.limits.clone())
+                    .map(|r| r.map(|t| Self::diamcircleValueType(Box::new(t)))),
             ),
             TypeVariant::LedgerCloseValueSignature => Box::new(
                 ReadXdrIter::<_, LedgerCloseValueSignature>::new(dec, r.limits.clone())
                     .map(|r| r.map(|t| Self::LedgerCloseValueSignature(Box::new(t)))),
             ),
-            TypeVariant::StellarValue => Box::new(
-                ReadXdrIter::<_, StellarValue>::new(dec, r.limits.clone())
-                    .map(|r| r.map(|t| Self::StellarValue(Box::new(t)))),
+            TypeVariant::diamcircleValue => Box::new(
+                ReadXdrIter::<_, diamcircleValue>::new(dec, r.limits.clone())
+                    .map(|r| r.map(|t| Self::diamcircleValue(Box::new(t)))),
             ),
-            TypeVariant::StellarValueExt => Box::new(
-                ReadXdrIter::<_, StellarValueExt>::new(dec, r.limits.clone())
-                    .map(|r| r.map(|t| Self::StellarValueExt(Box::new(t)))),
+            TypeVariant::diamcircleValueExt => Box::new(
+                ReadXdrIter::<_, diamcircleValueExt>::new(dec, r.limits.clone())
+                    .map(|r| r.map(|t| Self::diamcircleValueExt(Box::new(t)))),
             ),
             TypeVariant::LedgerHeaderFlags => Box::new(
                 ReadXdrIter::<_, LedgerHeaderFlags>::new(dec, r.limits.clone())
@@ -52643,9 +52643,9 @@ impl Type {
                 ReadXdrIter::<_, FloodDemand>::new(dec, r.limits.clone())
                     .map(|r| r.map(|t| Self::FloodDemand(Box::new(t)))),
             ),
-            TypeVariant::StellarMessage => Box::new(
-                ReadXdrIter::<_, StellarMessage>::new(dec, r.limits.clone())
-                    .map(|r| r.map(|t| Self::StellarMessage(Box::new(t)))),
+            TypeVariant::diamcircleMessage => Box::new(
+                ReadXdrIter::<_, diamcircleMessage>::new(dec, r.limits.clone())
+                    .map(|r| r.map(|t| Self::diamcircleMessage(Box::new(t)))),
             ),
             TypeVariant::AuthenticatedMessage => Box::new(
                 ReadXdrIter::<_, AuthenticatedMessage>::new(dec, r.limits.clone())
@@ -53788,17 +53788,17 @@ impl Type {
             TypeVariant::UpgradeType => {
                 Ok(Self::UpgradeType(Box::new(serde_json::from_reader(r)?)))
             }
-            TypeVariant::StellarValueType => Ok(Self::StellarValueType(Box::new(
+            TypeVariant::diamcircleValueType => Ok(Self::diamcircleValueType(Box::new(
                 serde_json::from_reader(r)?,
             ))),
             TypeVariant::LedgerCloseValueSignature => Ok(Self::LedgerCloseValueSignature(
                 Box::new(serde_json::from_reader(r)?),
             )),
-            TypeVariant::StellarValue => {
-                Ok(Self::StellarValue(Box::new(serde_json::from_reader(r)?)))
+            TypeVariant::diamcircleValue => {
+                Ok(Self::diamcircleValue(Box::new(serde_json::from_reader(r)?)))
             }
-            TypeVariant::StellarValueExt => {
-                Ok(Self::StellarValueExt(Box::new(serde_json::from_reader(r)?)))
+            TypeVariant::diamcircleValueExt => {
+                Ok(Self::diamcircleValueExt(Box::new(serde_json::from_reader(r)?)))
             }
             TypeVariant::LedgerHeaderFlags => Ok(Self::LedgerHeaderFlags(Box::new(
                 serde_json::from_reader(r)?,
@@ -54031,8 +54031,8 @@ impl Type {
             TypeVariant::FloodDemand => {
                 Ok(Self::FloodDemand(Box::new(serde_json::from_reader(r)?)))
             }
-            TypeVariant::StellarMessage => {
-                Ok(Self::StellarMessage(Box::new(serde_json::from_reader(r)?)))
+            TypeVariant::diamcircleMessage => {
+                Ok(Self::diamcircleMessage(Box::new(serde_json::from_reader(r)?)))
             }
             TypeVariant::AuthenticatedMessage => Ok(Self::AuthenticatedMessage(Box::new(
                 serde_json::from_reader(r)?,
@@ -54693,10 +54693,10 @@ impl Type {
             Self::LedgerKeyTtl(ref v) => v.as_ref(),
             Self::EnvelopeType(ref v) => v.as_ref(),
             Self::UpgradeType(ref v) => v.as_ref(),
-            Self::StellarValueType(ref v) => v.as_ref(),
+            Self::diamcircleValueType(ref v) => v.as_ref(),
             Self::LedgerCloseValueSignature(ref v) => v.as_ref(),
-            Self::StellarValue(ref v) => v.as_ref(),
-            Self::StellarValueExt(ref v) => v.as_ref(),
+            Self::diamcircleValue(ref v) => v.as_ref(),
+            Self::diamcircleValueExt(ref v) => v.as_ref(),
             Self::LedgerHeaderFlags(ref v) => v.as_ref(),
             Self::LedgerHeaderExtensionV1(ref v) => v.as_ref(),
             Self::LedgerHeaderExtensionV1Ext(ref v) => v.as_ref(),
@@ -54780,7 +54780,7 @@ impl Type {
             Self::FloodAdvert(ref v) => v.as_ref(),
             Self::TxDemandVector(ref v) => v.as_ref(),
             Self::FloodDemand(ref v) => v.as_ref(),
-            Self::StellarMessage(ref v) => v.as_ref(),
+            Self::diamcircleMessage(ref v) => v.as_ref(),
             Self::AuthenticatedMessage(ref v) => v.as_ref(),
             Self::AuthenticatedMessageV0(ref v) => v.as_ref(),
             Self::LiquidityPoolParameters(ref v) => v.as_ref(),
@@ -55128,10 +55128,10 @@ impl Type {
             Self::LedgerKeyTtl(_) => "LedgerKeyTtl",
             Self::EnvelopeType(_) => "EnvelopeType",
             Self::UpgradeType(_) => "UpgradeType",
-            Self::StellarValueType(_) => "StellarValueType",
+            Self::diamcircleValueType(_) => "diamcircleValueType",
             Self::LedgerCloseValueSignature(_) => "LedgerCloseValueSignature",
-            Self::StellarValue(_) => "StellarValue",
-            Self::StellarValueExt(_) => "StellarValueExt",
+            Self::diamcircleValue(_) => "diamcircleValue",
+            Self::diamcircleValueExt(_) => "diamcircleValueExt",
             Self::LedgerHeaderFlags(_) => "LedgerHeaderFlags",
             Self::LedgerHeaderExtensionV1(_) => "LedgerHeaderExtensionV1",
             Self::LedgerHeaderExtensionV1Ext(_) => "LedgerHeaderExtensionV1Ext",
@@ -55215,7 +55215,7 @@ impl Type {
             Self::FloodAdvert(_) => "FloodAdvert",
             Self::TxDemandVector(_) => "TxDemandVector",
             Self::FloodDemand(_) => "FloodDemand",
-            Self::StellarMessage(_) => "StellarMessage",
+            Self::diamcircleMessage(_) => "diamcircleMessage",
             Self::AuthenticatedMessage(_) => "AuthenticatedMessage",
             Self::AuthenticatedMessageV0(_) => "AuthenticatedMessageV0",
             Self::LiquidityPoolParameters(_) => "LiquidityPoolParameters",
@@ -55587,10 +55587,10 @@ impl Type {
             Self::LedgerKeyTtl(_) => TypeVariant::LedgerKeyTtl,
             Self::EnvelopeType(_) => TypeVariant::EnvelopeType,
             Self::UpgradeType(_) => TypeVariant::UpgradeType,
-            Self::StellarValueType(_) => TypeVariant::StellarValueType,
+            Self::diamcircleValueType(_) => TypeVariant::diamcircleValueType,
             Self::LedgerCloseValueSignature(_) => TypeVariant::LedgerCloseValueSignature,
-            Self::StellarValue(_) => TypeVariant::StellarValue,
-            Self::StellarValueExt(_) => TypeVariant::StellarValueExt,
+            Self::diamcircleValue(_) => TypeVariant::diamcircleValue,
+            Self::diamcircleValueExt(_) => TypeVariant::diamcircleValueExt,
             Self::LedgerHeaderFlags(_) => TypeVariant::LedgerHeaderFlags,
             Self::LedgerHeaderExtensionV1(_) => TypeVariant::LedgerHeaderExtensionV1,
             Self::LedgerHeaderExtensionV1Ext(_) => TypeVariant::LedgerHeaderExtensionV1Ext,
@@ -55680,7 +55680,7 @@ impl Type {
             Self::FloodAdvert(_) => TypeVariant::FloodAdvert,
             Self::TxDemandVector(_) => TypeVariant::TxDemandVector,
             Self::FloodDemand(_) => TypeVariant::FloodDemand,
-            Self::StellarMessage(_) => TypeVariant::StellarMessage,
+            Self::diamcircleMessage(_) => TypeVariant::diamcircleMessage,
             Self::AuthenticatedMessage(_) => TypeVariant::AuthenticatedMessage,
             Self::AuthenticatedMessageV0(_) => TypeVariant::AuthenticatedMessageV0,
             Self::LiquidityPoolParameters(_) => TypeVariant::LiquidityPoolParameters,
@@ -56067,10 +56067,10 @@ impl WriteXdr for Type {
             Self::LedgerKeyTtl(v) => v.write_xdr(w),
             Self::EnvelopeType(v) => v.write_xdr(w),
             Self::UpgradeType(v) => v.write_xdr(w),
-            Self::StellarValueType(v) => v.write_xdr(w),
+            Self::diamcircleValueType(v) => v.write_xdr(w),
             Self::LedgerCloseValueSignature(v) => v.write_xdr(w),
-            Self::StellarValue(v) => v.write_xdr(w),
-            Self::StellarValueExt(v) => v.write_xdr(w),
+            Self::diamcircleValue(v) => v.write_xdr(w),
+            Self::diamcircleValueExt(v) => v.write_xdr(w),
             Self::LedgerHeaderFlags(v) => v.write_xdr(w),
             Self::LedgerHeaderExtensionV1(v) => v.write_xdr(w),
             Self::LedgerHeaderExtensionV1Ext(v) => v.write_xdr(w),
@@ -56154,7 +56154,7 @@ impl WriteXdr for Type {
             Self::FloodAdvert(v) => v.write_xdr(w),
             Self::TxDemandVector(v) => v.write_xdr(w),
             Self::FloodDemand(v) => v.write_xdr(w),
-            Self::StellarMessage(v) => v.write_xdr(w),
+            Self::diamcircleMessage(v) => v.write_xdr(w),
             Self::AuthenticatedMessage(v) => v.write_xdr(w),
             Self::AuthenticatedMessageV0(v) => v.write_xdr(w),
             Self::LiquidityPoolParameters(v) => v.write_xdr(w),

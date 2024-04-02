@@ -5,14 +5,14 @@
 #![cfg(all(feature = "std", feature = "serde"))]
 
 #[cfg(feature = "curr")]
-use stellar_xdr::curr as stellar_xdr;
+use diamcircle_xdr::curr as diamcircle_xdr;
 #[cfg(feature = "next")]
-use stellar_xdr::next as stellar_xdr;
+use diamcircle_xdr::next as diamcircle_xdr;
 
-use stellar_xdr::{BytesM, Hash, StringM, VecM};
+use diamcircle_xdr::{BytesM, Hash, StringM, VecM};
 
 #[cfg(feature = "curr")]
-use stellar_xdr::AccountId;
+use diamcircle_xdr::AccountId;
 
 #[cfg(feature = "curr")]
 use std::str::FromStr;

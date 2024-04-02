@@ -10,7 +10,7 @@ impl Cmd {
     pub fn run() {
         let v = VERSION;
         println!(
-            "stellar-xdr {} ({})
+            "diamcircle-xdr {} ({})
 xdr (+curr): {}
 xdr (+next): {}",
             v.pkg, v.rev, v.xdr_curr, v.xdr_next

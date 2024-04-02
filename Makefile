@@ -19,7 +19,7 @@ build: generate
 
 doc:
 	cargo test --doc --all-features
-	RUSTDOCFLAGS="--cfg docs" cargo +nightly doc --package stellar-xdr --all-features $(CARGO_DOC_ARGS)
+	RUSTDOCFLAGS="--cfg docs" cargo +nightly doc --package diamnet-xdr --all-features $(CARGO_DOC_ARGS)
 
 install:
 	cargo install --path . --force --features cli
@@ -37,7 +37,7 @@ src/curr/generated.rs: $(sort $(wildcard xdr/curr/*.x))
 ifeq ($(LOCAL_XDRGEN),)
 	docker run -i --rm -v $$PWD:/wd -w /wd docker.io/library/ruby:latest /bin/bash -c '\
 		gem install specific_install -v 0.3.8 && \
-		gem specific_install https://github.com/stellar/xdrgen.git -b $(XDRGEN_VERSION) && \
+		gem specific_install https://github.com/diamcircle/xdrgen.git -b $(XDRGEN_VERSION) && \
 		xdrgen --language rust --namespace generated --output src/curr --rust-types-custom-str-impl $(XDRGEN_TYPES_CUSTOM_STR_IMPL_CURR) $^ \
 		'
 else
@@ -56,7 +56,7 @@ src/next/generated.rs: $(sort $(wildcard xdr/next/*.x))
 ifeq ($(LOCAL_XDRGEN),)
 	docker run -i --rm -v $$PWD:/wd -w /wd docker.io/library/ruby:latest /bin/bash -c '\
 		gem install specific_install -v 0.3.8 && \
-		gem specific_install https://github.com/stellar/xdrgen.git -b $(XDRGEN_VERSION) && \
+		gem specific_install https://github.com/diamcircle/xdrgen.git -b $(XDRGEN_VERSION) && \
 		xdrgen --language rust --namespace generated --output src/next --rust-types-custom-str-impl $(XDRGEN_TYPES_CUSTOM_STR_IMPL_NEXT) $^ \
 		'
 else
