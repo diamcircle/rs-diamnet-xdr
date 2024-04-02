@@ -5,11 +5,11 @@
 #![cfg(all(feature = "std", feature = "base64"))]
 
 #[cfg(feature = "curr")]
-use diamcircle_xdr::curr as diamcircle_xdr;
+use Diamnet_xdr::curr as Diamnet_xdr;
 #[cfg(feature = "next")]
-use diamcircle_xdr::next as diamcircle_xdr;
+use Diamnet_xdr::next as Diamnet_xdr;
 
-use diamcircle_xdr::{Error, Limits, OperationBody, ReadXdr, SequenceNumber, TransactionEnvelope};
+use Diamnet_xdr::{Error, Limits, OperationBody, ReadXdr, SequenceNumber, TransactionEnvelope};
 
 #[test]
 fn test_parse_pubnet_v18_tx() -> Result<(), Error> {

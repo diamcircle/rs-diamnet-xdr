@@ -57,7 +57,7 @@ jobs:
     runs-on: ${{ matrix.sys.os }}
     steps:
     - uses: actions/checkout@v3
-    - uses: diamcircle/actions/rust-cache@main
+    - uses: Diamnet/actions/rust-cache@main
     - name: Use the minimum supported Rust version
       if: matrix.rust == 'msrv'
       run: |
@@ -72,7 +72,7 @@ jobs:
     - run: rustup update
     - run: rustup target add ${{ matrix.sys.target }}
     - run: cargo version
-    - uses: diamcircle/binaries@v12
+    - uses: Diamnet/binaries@v12
       with:
         name: cargo-hack
         version: 0.5.16
@@ -94,7 +94,7 @@ jobs:
     runs-on: ${{ matrix.sys.os }}
     steps:
     - uses: actions/checkout@v3
-    - uses: diamcircle/actions/rust-cache@main
+    - uses: Diamnet/actions/rust-cache@main
     - name: Use the minimum supported Rust version
       if: matrix.rust == 'msrv'
       run: |
@@ -108,7 +108,7 @@ jobs:
     - run: rustup update
     - run: rustup target add ${{ matrix.sys.target }}
     - run: cargo version
-    - uses: diamcircle/binaries@v12
+    - uses: Diamnet/binaries@v12
       with:
         name: cargo-hack
         version: 0.5.16
@@ -123,7 +123,7 @@ jobs:
           target: wasm32-unknown-unknown
         - os: ubuntu-latest
           target: x86_64-unknown-linux-gnu
-    uses: diamcircle/actions/.github/workflows/rust-publish-dry-run.yml@main
+    uses: Diamnet/actions/.github/workflows/rust-publish-dry-run.yml@main
     with:
       runs-on: ${{ matrix.sys.os }}
       target: ${{ matrix.sys.target }}

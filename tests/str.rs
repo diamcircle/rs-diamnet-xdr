@@ -1,9 +1,9 @@
 #![cfg(feature = "curr")]
 #![cfg(feature = "std")]
 
-use diamcircle_xdr::curr as diamcircle_xdr;
+use Diamnet_xdr::curr as Diamnet_xdr;
 
-use diamcircle_xdr::{
+use Diamnet_xdr::{
     AccountId, AssetCode, AssetCode12, AssetCode4, Error, Hash, MuxedAccount, MuxedAccountMed25519,
     NodeId, PublicKey, ScAddress, SignerKey, SignerKeyEd25519SignedPayload, Uint256,
 };

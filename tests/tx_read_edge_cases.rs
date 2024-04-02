@@ -5,13 +5,13 @@
 #![cfg(all(feature = "std", feature = "base64"))]
 
 #[cfg(feature = "curr")]
-use diamcircle_xdr::curr as diamcircle_xdr;
+use Diamnet_xdr::curr as Diamnet_xdr;
 #[cfg(feature = "next")]
-use diamcircle_xdr::next as diamcircle_xdr;
+use Diamnet_xdr::next as Diamnet_xdr;
 
 use std::io::{self, Cursor};
-use diamcircle_xdr::Error;
-use diamcircle_xdr::{Limited, Limits, ReadXdr, WriteXdr};
+use Diamnet_xdr::Error;
+use Diamnet_xdr::{Limited, Limits, ReadXdr, WriteXdr};
 
 #[test]
 fn test_read_interrupts_and_residuals() -> Result<(), Error> {

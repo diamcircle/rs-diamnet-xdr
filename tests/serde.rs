@@ -5,14 +5,14 @@
 #![cfg(all(feature = "std", feature = "serde"))]
 
 #[cfg(feature = "curr")]
-use diamcircle_xdr::curr as diamcircle_xdr;
+use Diamnet_xdr::curr as Diamnet_xdr;
 #[cfg(feature = "next")]
-use diamcircle_xdr::next as diamcircle_xdr;
+use Diamnet_xdr::next as Diamnet_xdr;
 
-use diamcircle_xdr::{BytesM, Hash, StringM, VecM};
+use Diamnet_xdr::{BytesM, Hash, StringM, VecM};
 
 #[cfg(feature = "curr")]
-use diamcircle_xdr::AccountId;
+use Diamnet_xdr::AccountId;
 
 #[cfg(feature = "curr")]
 use std::str::FromStr;

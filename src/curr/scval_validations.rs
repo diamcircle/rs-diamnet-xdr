@@ -40,7 +40,7 @@ impl Validate for ScVal {
             }
 
             ScVal::Symbol(s) => {
-                // Symbol is defined as valid per https://github.com/diamcircle/rs-diamcircle-contract-env/blob/94c1717516c8fad4ad65caa148183b9fcbc408db/diamcircle-contract-env-common/src/symbol.rs#L107-L111.
+                // Symbol is defined as valid per https://github.com/diamcircle/rs-Diamnet-contract-env/blob/94c1717516c8fad4ad65caa148183b9fcbc408db/Diamnet-contract-env-common/src/symbol.rs#L107-L111.
                 if s.iter()
                     .all(|c| matches!(*c as char, '_' | '0'..='9' | 'A'..='Z' | 'a'..='z'))
                 {

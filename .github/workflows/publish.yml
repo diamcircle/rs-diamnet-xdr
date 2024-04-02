@@ -11,7 +11,7 @@ defaults:
 jobs:
 
   publish:
-    uses: diamcircle/actions/.github/workflows/rust-publish.yml@main
+    uses: Diamnet/actions/.github/workflows/rust-publish.yml@main
     secrets:
       CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
 
@@ -34,7 +34,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     env:
       VERSION: '${{ github.event.release.name }}'
-      NAME: 'diamcircle-xdr-${{ github.event.release.name }}-${{ matrix.target }}'
+      NAME: 'Diamnet-xdr-${{ github.event.release.name }}-${{ matrix.target }}'
     steps:
     - uses: actions/checkout@v3
     - run: rustup update
@@ -48,13 +48,13 @@ jobs:
         CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER: aarch64-linux-gnu-gcc
       run: |
         cd target/package
-        tar xvfz diamcircle-xdr-$VERSION.crate
-        cd diamcircle-xdr-$VERSION
+        tar xvfz Diamnet-xdr-$VERSION.crate
+        cd Diamnet-xdr-$VERSION
         cargo build --target-dir=../.. --release --target ${{ matrix.target }} --features cli
     - uses: actions/upload-artifact@v3
       with:
         name: ${{ env.NAME }}
-        path: 'target/${{ matrix.target }}/release/diamcircle-xdr${{ matrix.ext }}'
+        path: 'target/${{ matrix.target }}/release/Diamnet-xdr${{ matrix.ext }}'
     - name: Upload
       uses: actions/github-script@v6
       with:
@@ -65,5 +65,5 @@ jobs:
             repo: context.repo.repo,
             release_id: ${{ github.event.release.id }},
             name: '${{ env.NAME }}${{ matrix.ext }}',
-            data: fs.readFileSync('target/${{ matrix.target }}/release/diamcircle-xdr${{ matrix.ext }}'),
+            data: fs.readFileSync('target/${{ matrix.target }}/release/Diamnet-xdr${{ matrix.ext }}'),
           });

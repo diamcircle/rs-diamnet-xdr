@@ -4,23 +4,23 @@
 ))]
 
 #[cfg(feature = "curr")]
-use diamcircle_xdr::curr as diamcircle_xdr;
+use Diamnet_xdr::curr as Diamnet_xdr;
 #[cfg(feature = "next")]
-use diamcircle_xdr::next as diamcircle_xdr;
+use Diamnet_xdr::next as Diamnet_xdr;
 
-use diamcircle_xdr::{
+use Diamnet_xdr::{
     Error, Memo, MuxedAccount, Preconditions, SequenceNumber, Transaction, TransactionEnvelope,
     TransactionExt, TransactionV1Envelope, Uint256,
 };
 #[cfg(all(feature = "std", feature = "base64"))]
-use diamcircle_xdr::{Limits, Type, TypeVariant};
+use Diamnet_xdr::{Limits, Type, TypeVariant};
 
 #[cfg(all(feature = "std", feature = "base64"))]
 #[test]
 fn test_build_small_tx_with_std() -> Result<(), Error> {
     use std::str::FromStr;
 
-    use diamcircle_xdr::WriteXdr;
+    use Diamnet_xdr::WriteXdr;
 
     let te = TransactionEnvelope::Tx(TransactionV1Envelope {
         tx: Transaction {
@@ -28,7 +28,7 @@ fn test_build_small_tx_with_std() -> Result<(), Error> {
             fee: 0,
             seq_num: SequenceNumber(1),
             cond: Preconditions::None,
-            memo: Memo::Text("diamcircle".as_bytes().try_into()?),
+            memo: Memo::Text("Diamnet".as_bytes().try_into()?),
             operations: [].to_vec().try_into()?,
             ext: TransactionExt::V0,
         },
@@ -70,7 +70,7 @@ fn test_build_small_tx_with_alloc() -> Result<(), Error> {
             fee: 0,
             seq_num: SequenceNumber(1),
             cond: Preconditions::None,
-            memo: Memo::Text("diamcircle".as_bytes().try_into()?),
+            memo: Memo::Text("Diamnet".as_bytes().try_into()?),
             operations: [].to_vec().try_into()?,
             ext: TransactionExt::V0,
         },
@@ -88,7 +88,7 @@ fn test_build_small_tx_with_alloc() -> Result<(), Error> {
             fee: 0,
             seq_num: SequenceNumber(1),
             cond: Preconditions::None,
-            memo: Memo::Text("diamcircle".as_bytes().try_into()?),
+            memo: Memo::Text("Diamnet".as_bytes().try_into()?),
             operations: (&[]).try_into()?,
             ext: TransactionExt::V0,
         },

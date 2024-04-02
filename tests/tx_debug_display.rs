@@ -4,11 +4,11 @@
 ))]
 
 #[cfg(feature = "curr")]
-use diamcircle_xdr::curr as diamcircle_xdr;
+use Diamnet_xdr::curr as Diamnet_xdr;
 #[cfg(feature = "next")]
-use diamcircle_xdr::next as diamcircle_xdr;
+use Diamnet_xdr::next as Diamnet_xdr;
 
-use diamcircle_xdr::{BytesM, Error, Hash, StringM, VecM};
+use Diamnet_xdr::{BytesM, Error, Hash, StringM, VecM};
 
 #[test]
 fn test_debug() {

@@ -1,67 +1,67 @@
 // Module  is generated from:
-//  xdr/next/diamcircle-SCP.x
-//  xdr/next/diamcircle-contract-config-setting.x
-//  xdr/next/diamcircle-contract-env-meta.x
-//  xdr/next/diamcircle-contract-meta.x
-//  xdr/next/diamcircle-contract-spec.x
-//  xdr/next/diamcircle-contract.x
-//  xdr/next/diamcircle-internal.x
-//  xdr/next/diamcircle-ledger-entries.x
-//  xdr/next/diamcircle-ledger.x
-//  xdr/next/diamcircle-overlay.x
-//  xdr/next/diamcircle-transaction.x
-//  xdr/next/diamcircle-types.x
+//  xdr/next/Diamnet-SCP.x
+//  xdr/next/Diamnet-contract-config-setting.x
+//  xdr/next/Diamnet-contract-env-meta.x
+//  xdr/next/Diamnet-contract-meta.x
+//  xdr/next/Diamnet-contract-spec.x
+//  xdr/next/Diamnet-contract.x
+//  xdr/next/Diamnet-internal.x
+//  xdr/next/Diamnet-ledger-entries.x
+//  xdr/next/Diamnet-ledger.x
+//  xdr/next/Diamnet-overlay.x
+//  xdr/next/Diamnet-transaction.x
+//  xdr/next/Diamnet-types.x
 
 #![allow(clippy::missing_errors_doc, clippy::unreadable_literal)]
 
 /// `XDR_FILES_SHA256` is a list of pairs of source files and their SHA256 hashes.
 pub const XDR_FILES_SHA256: [(&str, &str); 12] = [
     (
-        "xdr/next/diamcircle-SCP.x",
+        "xdr/next/Diamnet-SCP.x",
         "8f32b04d008f8bc33b8843d075e69837231a673691ee41d8b821ca229a6e802a",
     ),
     (
-        "xdr/next/diamcircle-contract-config-setting.x",
+        "xdr/next/Diamnet-contract-config-setting.x",
         "393369678663cb0f9471a0b69e2a9cfa3ac93c4415fa40cec166e9a231ecbe0d",
     ),
     (
-        "xdr/next/diamcircle-contract-env-meta.x",
+        "xdr/next/Diamnet-contract-env-meta.x",
         "928a30de814ee589bc1d2aadd8dd81c39f71b7e6f430f56974505ccb1f49654b",
     ),
     (
-        "xdr/next/diamcircle-contract-meta.x",
+        "xdr/next/Diamnet-contract-meta.x",
         "f01532c11ca044e19d9f9f16fe373e9af64835da473be556b9a807ee3319ae0d",
     ),
     (
-        "xdr/next/diamcircle-contract-spec.x",
+        "xdr/next/Diamnet-contract-spec.x",
         "c7ffa21d2e91afb8e666b33524d307955426ff553a486d670c29217ed9888d49",
     ),
     (
-        "xdr/next/diamcircle-contract.x",
+        "xdr/next/Diamnet-contract.x",
         "7f665e4103e146a88fcdabce879aaaacd3bf9283feb194cc47ff986264c1e315",
     ),
     (
-        "xdr/next/diamcircle-internal.x",
+        "xdr/next/Diamnet-internal.x",
         "227835866c1b2122d1eaf28839ba85ea7289d1cb681dda4ca619c2da3d71fe00",
     ),
     (
-        "xdr/next/diamcircle-ledger-entries.x",
+        "xdr/next/Diamnet-ledger-entries.x",
         "77dc7062ae6d0812136333e12e35b2294d7c2896a536be9c811eb0ed2abbbccb",
     ),
     (
-        "xdr/next/diamcircle-ledger.x",
+        "xdr/next/Diamnet-ledger.x",
         "888152fb940b79a01ac00a5218ca91360cb0f01af7acc030d5805ebfec280203",
     ),
     (
-        "xdr/next/diamcircle-overlay.x",
+        "xdr/next/Diamnet-overlay.x",
         "de3957c58b96ae07968b3d3aebea84f83603e95322d1fa336360e13e3aba737a",
     ),
     (
-        "xdr/next/diamcircle-transaction.x",
+        "xdr/next/Diamnet-transaction.x",
         "0d2b35a331a540b48643925d0869857236eb2487c02d340ea32e365e784ea2b8",
     ),
     (
-        "xdr/next/diamcircle-types.x",
+        "xdr/next/Diamnet-types.x",
         "6e3b13f0d3e360b09fa5e2b0e55d43f4d974a769df66afb34e8aecbb329d3f15",
     ),
 ];
@@ -8359,7 +8359,7 @@ impl WriteXdr for Int256Parts {
 /// enum ContractExecutableType
 /// {
 ///     CONTRACT_EXECUTABLE_WASM = 0,
-///     CONTRACT_EXECUTABLE_diamcircle_ASSET = 1
+///     CONTRACT_EXECUTABLE_Diamnet_ASSET = 1
 /// };
 /// ```
 ///
@@ -8374,21 +8374,21 @@ impl WriteXdr for Int256Parts {
 #[repr(i32)]
 pub enum ContractExecutableType {
     Wasm = 0,
-    diamcircleAsset = 1,
+    DiamnetAsset = 1,
 }
 
 impl ContractExecutableType {
     pub const VARIANTS: [ContractExecutableType; 2] = [
         ContractExecutableType::Wasm,
-        ContractExecutableType::diamcircleAsset,
+        ContractExecutableType::DiamnetAsset,
     ];
-    pub const VARIANTS_STR: [&'static str; 2] = ["Wasm", "diamcircleAsset"];
+    pub const VARIANTS_STR: [&'static str; 2] = ["Wasm", "DiamnetAsset"];
 
     #[must_use]
     pub const fn name(&self) -> &'static str {
         match self {
             Self::Wasm => "Wasm",
-            Self::diamcircleAsset => "diamcircleAsset",
+            Self::DiamnetAsset => "DiamnetAsset",
         }
     }
 
@@ -8425,7 +8425,7 @@ impl TryFrom<i32> for ContractExecutableType {
     fn try_from(i: i32) -> Result<Self> {
         let e = match i {
             0 => ContractExecutableType::Wasm,
-            1 => ContractExecutableType::diamcircleAsset,
+            1 => ContractExecutableType::DiamnetAsset,
             #[allow(unreachable_patterns)]
             _ => return Err(Error::Invalid),
         };
@@ -8468,7 +8468,7 @@ impl WriteXdr for ContractExecutableType {
 /// {
 /// case CONTRACT_EXECUTABLE_WASM:
 ///     Hash wasm_hash;
-/// case CONTRACT_EXECUTABLE_diamcircle_ASSET:
+/// case CONTRACT_EXECUTABLE_Diamnet_ASSET:
 ///     void;
 /// };
 /// ```
@@ -8484,21 +8484,21 @@ impl WriteXdr for ContractExecutableType {
 #[allow(clippy::large_enum_variant)]
 pub enum ContractExecutable {
     Wasm(Hash),
-    diamcircleAsset,
+    DiamnetAsset,
 }
 
 impl ContractExecutable {
     pub const VARIANTS: [ContractExecutableType; 2] = [
         ContractExecutableType::Wasm,
-        ContractExecutableType::diamcircleAsset,
+        ContractExecutableType::DiamnetAsset,
     ];
-    pub const VARIANTS_STR: [&'static str; 2] = ["Wasm", "diamcircleAsset"];
+    pub const VARIANTS_STR: [&'static str; 2] = ["Wasm", "DiamnetAsset"];
 
     #[must_use]
     pub const fn name(&self) -> &'static str {
         match self {
             Self::Wasm(_) => "Wasm",
-            Self::diamcircleAsset => "diamcircleAsset",
+            Self::DiamnetAsset => "DiamnetAsset",
         }
     }
 
@@ -8507,7 +8507,7 @@ impl ContractExecutable {
         #[allow(clippy::match_same_arms)]
         match self {
             Self::Wasm(_) => ContractExecutableType::Wasm,
-            Self::diamcircleAsset => ContractExecutableType::diamcircleAsset,
+            Self::DiamnetAsset => ContractExecutableType::DiamnetAsset,
         }
     }
 
@@ -8547,7 +8547,7 @@ impl ReadXdr for ContractExecutable {
             #[allow(clippy::match_same_arms, clippy::match_wildcard_for_single_variants)]
             let v = match dv {
                 ContractExecutableType::Wasm => Self::Wasm(Hash::read_xdr(r)?),
-                ContractExecutableType::diamcircleAsset => Self::diamcircleAsset,
+                ContractExecutableType::DiamnetAsset => Self::DiamnetAsset,
                 #[allow(unreachable_patterns)]
                 _ => return Err(Error::Invalid),
             };
@@ -8564,7 +8564,7 @@ impl WriteXdr for ContractExecutable {
             #[allow(clippy::match_same_arms)]
             match self {
                 Self::Wasm(v) => v.write_xdr(w)?,
-                Self::diamcircleAsset => ().write_xdr(w)?,
+                Self::DiamnetAsset => ().write_xdr(w)?,
             };
             Ok(())
         })
@@ -9867,7 +9867,7 @@ impl WriteXdr for StoredTransactionSet {
 /// {
 /// 	StoredTransactionSet txSet;
 /// 	uint32 ledgerSeq;
-/// 	diamcircleValue scpValue;
+/// 	DiamnetValue scpValue;
 /// };
 /// ```
 ///
@@ -9881,7 +9881,7 @@ impl WriteXdr for StoredTransactionSet {
 pub struct StoredDebugTransactionSet {
     pub tx_set: StoredTransactionSet,
     pub ledger_seq: u32,
-    pub scp_value: diamcircleValue,
+    pub scp_value: DiamnetValue,
 }
 
 impl ReadXdr for StoredDebugTransactionSet {
@@ -9891,7 +9891,7 @@ impl ReadXdr for StoredDebugTransactionSet {
             Ok(Self {
                 tx_set: StoredTransactionSet::read_xdr(r)?,
                 ledger_seq: u32::read_xdr(r)?,
-                scp_value: diamcircleValue::read_xdr(r)?,
+                scp_value: DiamnetValue::read_xdr(r)?,
             })
         })
     }
@@ -17288,13 +17288,13 @@ impl AsRef<[u8]> for UpgradeType {
     }
 }
 
-/// diamcircleValueType is an XDR Enum defines as:
+/// DiamnetValueType is an XDR Enum defines as:
 ///
 /// ```text
-/// enum diamcircleValueType
+/// enum DiamnetValueType
 /// {
-///     diamcircle_VALUE_BASIC = 0,
-///     diamcircle_VALUE_SIGNED = 1
+///     Diamnet_VALUE_BASIC = 0,
+///     Diamnet_VALUE_SIGNED = 1
 /// };
 /// ```
 ///
@@ -17307,13 +17307,13 @@ impl AsRef<[u8]> for UpgradeType {
     serde(rename_all = "snake_case")
 )]
 #[repr(i32)]
-pub enum diamcircleValueType {
+pub enum DiamnetValueType {
     Basic = 0,
     Signed = 1,
 }
 
-impl diamcircleValueType {
-    pub const VARIANTS: [diamcircleValueType; 2] = [diamcircleValueType::Basic, diamcircleValueType::Signed];
+impl DiamnetValueType {
+    pub const VARIANTS: [DiamnetValueType; 2] = [DiamnetValueType::Basic, DiamnetValueType::Signed];
     pub const VARIANTS_STR: [&'static str; 2] = ["Basic", "Signed"];
 
     #[must_use]
@@ -17325,39 +17325,39 @@ impl diamcircleValueType {
     }
 
     #[must_use]
-    pub const fn variants() -> [diamcircleValueType; 2] {
+    pub const fn variants() -> [DiamnetValueType; 2] {
         Self::VARIANTS
     }
 }
 
-impl Name for diamcircleValueType {
+impl Name for DiamnetValueType {
     #[must_use]
     fn name(&self) -> &'static str {
         Self::name(self)
     }
 }
 
-impl Variants<diamcircleValueType> for diamcircleValueType {
-    fn variants() -> slice::Iter<'static, diamcircleValueType> {
+impl Variants<DiamnetValueType> for DiamnetValueType {
+    fn variants() -> slice::Iter<'static, DiamnetValueType> {
         Self::VARIANTS.iter()
     }
 }
 
-impl Enum for diamcircleValueType {}
+impl Enum for DiamnetValueType {}
 
-impl fmt::Display for diamcircleValueType {
+impl fmt::Display for DiamnetValueType {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.write_str(self.name())
     }
 }
 
-impl TryFrom<i32> for diamcircleValueType {
+impl TryFrom<i32> for DiamnetValueType {
     type Error = Error;
 
     fn try_from(i: i32) -> Result<Self> {
         let e = match i {
-            0 => diamcircleValueType::Basic,
-            1 => diamcircleValueType::Signed,
+            0 => DiamnetValueType::Basic,
+            1 => DiamnetValueType::Signed,
             #[allow(unreachable_patterns)]
             _ => return Err(Error::Invalid),
         };
@@ -17365,14 +17365,14 @@ impl TryFrom<i32> for diamcircleValueType {
     }
 }
 
-impl From<diamcircleValueType> for i32 {
+impl From<DiamnetValueType> for i32 {
     #[must_use]
-    fn from(e: diamcircleValueType) -> Self {
+    fn from(e: DiamnetValueType) -> Self {
         e as Self
     }
 }
 
-impl ReadXdr for diamcircleValueType {
+impl ReadXdr for DiamnetValueType {
     #[cfg(feature = "std")]
     fn read_xdr<R: Read>(r: &mut Limited<R>) -> Result<Self> {
         r.with_limited_depth(|r| {
@@ -17383,7 +17383,7 @@ impl ReadXdr for diamcircleValueType {
     }
 }
 
-impl WriteXdr for diamcircleValueType {
+impl WriteXdr for DiamnetValueType {
     #[cfg(feature = "std")]
     fn write_xdr<W: Write>(&self, w: &mut Limited<W>) -> Result<()> {
         w.with_limited_depth(|w| {
@@ -17438,19 +17438,19 @@ impl WriteXdr for LedgerCloseValueSignature {
     }
 }
 
-/// diamcircleValueExt is an XDR NestedUnion defines as:
+/// DiamnetValueExt is an XDR NestedUnion defines as:
 ///
 /// ```text
-/// union switch (diamcircleValueType v)
+/// union switch (DiamnetValueType v)
 ///     {
-///     case diamcircle_VALUE_BASIC:
+///     case Diamnet_VALUE_BASIC:
 ///         void;
-///     case diamcircle_VALUE_SIGNED:
+///     case Diamnet_VALUE_SIGNED:
 ///         LedgerCloseValueSignature lcValueSignature;
 ///     }
 /// ```
 ///
-// union with discriminant diamcircleValueType
+// union with discriminant DiamnetValueType
 #[derive(Clone, Debug, Hash, PartialEq, Eq, PartialOrd, Ord)]
 #[cfg_attr(feature = "arbitrary", derive(Arbitrary))]
 #[cfg_attr(
@@ -17459,13 +17459,13 @@ impl WriteXdr for LedgerCloseValueSignature {
     serde(rename_all = "snake_case")
 )]
 #[allow(clippy::large_enum_variant)]
-pub enum diamcircleValueExt {
+pub enum DiamnetValueExt {
     Basic,
     Signed(LedgerCloseValueSignature),
 }
 
-impl diamcircleValueExt {
-    pub const VARIANTS: [diamcircleValueType; 2] = [diamcircleValueType::Basic, diamcircleValueType::Signed];
+impl DiamnetValueExt {
+    pub const VARIANTS: [DiamnetValueType; 2] = [DiamnetValueType::Basic, DiamnetValueType::Signed];
     pub const VARIANTS_STR: [&'static str; 2] = ["Basic", "Signed"];
 
     #[must_use]
@@ -17477,51 +17477,51 @@ impl diamcircleValueExt {
     }
 
     #[must_use]
-    pub const fn discriminant(&self) -> diamcircleValueType {
+    pub const fn discriminant(&self) -> DiamnetValueType {
         #[allow(clippy::match_same_arms)]
         match self {
-            Self::Basic => diamcircleValueType::Basic,
-            Self::Signed(_) => diamcircleValueType::Signed,
+            Self::Basic => DiamnetValueType::Basic,
+            Self::Signed(_) => DiamnetValueType::Signed,
         }
     }
 
     #[must_use]
-    pub const fn variants() -> [diamcircleValueType; 2] {
+    pub const fn variants() -> [DiamnetValueType; 2] {
         Self::VARIANTS
     }
 }
 
-impl Name for diamcircleValueExt {
+impl Name for DiamnetValueExt {
     #[must_use]
     fn name(&self) -> &'static str {
         Self::name(self)
     }
 }
 
-impl Discriminant<diamcircleValueType> for diamcircleValueExt {
+impl Discriminant<DiamnetValueType> for DiamnetValueExt {
     #[must_use]
-    fn discriminant(&self) -> diamcircleValueType {
+    fn discriminant(&self) -> DiamnetValueType {
         Self::discriminant(self)
     }
 }
 
-impl Variants<diamcircleValueType> for diamcircleValueExt {
-    fn variants() -> slice::Iter<'static, diamcircleValueType> {
+impl Variants<DiamnetValueType> for DiamnetValueExt {
+    fn variants() -> slice::Iter<'static, DiamnetValueType> {
         Self::VARIANTS.iter()
     }
 }
 
-impl Union<diamcircleValueType> for diamcircleValueExt {}
+impl Union<DiamnetValueType> for DiamnetValueExt {}
 
-impl ReadXdr for diamcircleValueExt {
+impl ReadXdr for DiamnetValueExt {
     #[cfg(feature = "std")]
     fn read_xdr<R: Read>(r: &mut Limited<R>) -> Result<Self> {
         r.with_limited_depth(|r| {
-            let dv: diamcircleValueType = <diamcircleValueType as ReadXdr>::read_xdr(r)?;
+            let dv: DiamnetValueType = <DiamnetValueType as ReadXdr>::read_xdr(r)?;
             #[allow(clippy::match_same_arms, clippy::match_wildcard_for_single_variants)]
             let v = match dv {
-                diamcircleValueType::Basic => Self::Basic,
-                diamcircleValueType::Signed => Self::Signed(LedgerCloseValueSignature::read_xdr(r)?),
+                DiamnetValueType::Basic => Self::Basic,
+                DiamnetValueType::Signed => Self::Signed(LedgerCloseValueSignature::read_xdr(r)?),
                 #[allow(unreachable_patterns)]
                 _ => return Err(Error::Invalid),
             };
@@ -17530,7 +17530,7 @@ impl ReadXdr for diamcircleValueExt {
     }
 }
 
-impl WriteXdr for diamcircleValueExt {
+impl WriteXdr for DiamnetValueExt {
     #[cfg(feature = "std")]
     fn write_xdr<W: Write>(&self, w: &mut Limited<W>) -> Result<()> {
         w.with_limited_depth(|w| {
@@ -17545,10 +17545,10 @@ impl WriteXdr for diamcircleValueExt {
     }
 }
 
-/// diamcircleValue is an XDR Struct defines as:
+/// DiamnetValue is an XDR Struct defines as:
 ///
 /// ```text
-/// struct diamcircleValue
+/// struct DiamnetValue
 /// {
 ///     Hash txSetHash;      // transaction set to apply to previous ledger
 ///     TimePoint closeTime; // network close time
@@ -17561,11 +17561,11 @@ impl WriteXdr for diamcircleValueExt {
 ///     UpgradeType upgrades<6>;
 ///
 ///     // reserved for future use
-///     union switch (diamcircleValueType v)
+///     union switch (DiamnetValueType v)
 ///     {
-///     case diamcircle_VALUE_BASIC:
+///     case Diamnet_VALUE_BASIC:
 ///         void;
-///     case diamcircle_VALUE_SIGNED:
+///     case Diamnet_VALUE_SIGNED:
 ///         LedgerCloseValueSignature lcValueSignature;
 ///     }
 ///     ext;
@@ -17579,14 +17579,14 @@ impl WriteXdr for diamcircleValueExt {
     derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "snake_case")
 )]
-pub struct diamcircleValue {
+pub struct DiamnetValue {
     pub tx_set_hash: Hash,
     pub close_time: TimePoint,
     pub upgrades: VecM<UpgradeType, 6>,
-    pub ext: diamcircleValueExt,
+    pub ext: DiamnetValueExt,
 }
 
-impl ReadXdr for diamcircleValue {
+impl ReadXdr for DiamnetValue {
     #[cfg(feature = "std")]
     fn read_xdr<R: Read>(r: &mut Limited<R>) -> Result<Self> {
         r.with_limited_depth(|r| {
@@ -17594,13 +17594,13 @@ impl ReadXdr for diamcircleValue {
                 tx_set_hash: Hash::read_xdr(r)?,
                 close_time: TimePoint::read_xdr(r)?,
                 upgrades: VecM::<UpgradeType, 6>::read_xdr(r)?,
-                ext: diamcircleValueExt::read_xdr(r)?,
+                ext: DiamnetValueExt::read_xdr(r)?,
             })
         })
     }
 }
 
-impl WriteXdr for diamcircleValue {
+impl WriteXdr for DiamnetValue {
     #[cfg(feature = "std")]
     fn write_xdr<W: Write>(&self, w: &mut Limited<W>) -> Result<()> {
         w.with_limited_depth(|w| {
@@ -17999,7 +17999,7 @@ impl WriteXdr for LedgerHeaderExt {
 /// {
 ///     uint32 ledgerVersion;    // the protocol version of the ledger
 ///     Hash previousLedgerHash; // hash of the previous ledger header
-///     diamcircleValue scpValue;   // what consensus agreed to
+///     DiamnetValue scpValue;   // what consensus agreed to
 ///     Hash txSetResultHash;    // the TransactionResultSet that led to this ledger
 ///     Hash bucketListHash;     // hash of the ledger state
 ///
@@ -18046,7 +18046,7 @@ impl WriteXdr for LedgerHeaderExt {
 pub struct LedgerHeader {
     pub ledger_version: u32,
     pub previous_ledger_hash: Hash,
-    pub scp_value: diamcircleValue,
+    pub scp_value: DiamnetValue,
     pub tx_set_result_hash: Hash,
     pub bucket_list_hash: Hash,
     pub ledger_seq: u32,
@@ -18068,7 +18068,7 @@ impl ReadXdr for LedgerHeader {
             Ok(Self {
                 ledger_version: u32::read_xdr(r)?,
                 previous_ledger_hash: Hash::read_xdr(r)?,
-                scp_value: diamcircleValue::read_xdr(r)?,
+                scp_value: DiamnetValue::read_xdr(r)?,
                 tx_set_result_hash: Hash::read_xdr(r)?,
                 bucket_list_hash: Hash::read_xdr(r)?,
                 ledger_seq: u32::read_xdr(r)?,
@@ -24266,10 +24266,10 @@ impl WriteXdr for FloodDemand {
     }
 }
 
-/// diamcircleMessage is an XDR Union defines as:
+/// DiamnetMessage is an XDR Union defines as:
 ///
 /// ```text
-/// union diamcircleMessage switch (MessageType type)
+/// union DiamnetMessage switch (MessageType type)
 /// {
 /// case ERROR_MSG:
 ///     Error error;
@@ -24330,7 +24330,7 @@ impl WriteXdr for FloodDemand {
     serde(rename_all = "snake_case")
 )]
 #[allow(clippy::large_enum_variant)]
-pub enum diamcircleMessage {
+pub enum DiamnetMessage {
     ErrorMsg(SError),
     Hello(Hello),
     Auth(Auth),
@@ -24353,7 +24353,7 @@ pub enum diamcircleMessage {
     FloodDemand(FloodDemand),
 }
 
-impl diamcircleMessage {
+impl DiamnetMessage {
     pub const VARIANTS: [MessageType; 20] = [
         MessageType::ErrorMsg,
         MessageType::Hello,
@@ -24458,29 +24458,29 @@ impl diamcircleMessage {
     }
 }
 
-impl Name for diamcircleMessage {
+impl Name for DiamnetMessage {
     #[must_use]
     fn name(&self) -> &'static str {
         Self::name(self)
     }
 }
 
-impl Discriminant<MessageType> for diamcircleMessage {
+impl Discriminant<MessageType> for DiamnetMessage {
     #[must_use]
     fn discriminant(&self) -> MessageType {
         Self::discriminant(self)
     }
 }
 
-impl Variants<MessageType> for diamcircleMessage {
+impl Variants<MessageType> for DiamnetMessage {
     fn variants() -> slice::Iter<'static, MessageType> {
         Self::VARIANTS.iter()
     }
 }
 
-impl Union<MessageType> for diamcircleMessage {}
+impl Union<MessageType> for DiamnetMessage {}
 
-impl ReadXdr for diamcircleMessage {
+impl ReadXdr for DiamnetMessage {
     #[cfg(feature = "std")]
     fn read_xdr<R: Read>(r: &mut Limited<R>) -> Result<Self> {
         r.with_limited_depth(|r| {
@@ -24523,7 +24523,7 @@ impl ReadXdr for diamcircleMessage {
     }
 }
 
-impl WriteXdr for diamcircleMessage {
+impl WriteXdr for DiamnetMessage {
     #[cfg(feature = "std")]
     fn write_xdr<W: Write>(&self, w: &mut Limited<W>) -> Result<()> {
         w.with_limited_depth(|w| {
@@ -24562,7 +24562,7 @@ impl WriteXdr for diamcircleMessage {
 /// struct
 ///     {
 ///         uint64 sequence;
-///         diamcircleMessage message;
+///         DiamnetMessage message;
 ///         HmacSha256Mac mac;
 ///     }
 /// ```
@@ -24576,7 +24576,7 @@ impl WriteXdr for diamcircleMessage {
 )]
 pub struct AuthenticatedMessageV0 {
     pub sequence: u64,
-    pub message: diamcircleMessage,
+    pub message: DiamnetMessage,
     pub mac: HmacSha256Mac,
 }
 
@@ -24586,7 +24586,7 @@ impl ReadXdr for AuthenticatedMessageV0 {
         r.with_limited_depth(|r| {
             Ok(Self {
                 sequence: u64::read_xdr(r)?,
-                message: diamcircleMessage::read_xdr(r)?,
+                message: DiamnetMessage::read_xdr(r)?,
                 mac: HmacSha256Mac::read_xdr(r)?,
             })
         })
@@ -24614,7 +24614,7 @@ impl WriteXdr for AuthenticatedMessageV0 {
 ///     struct
 ///     {
 ///         uint64 sequence;
-///         diamcircleMessage message;
+///         DiamnetMessage message;
 ///         HmacSha256Mac mac;
 ///     } v0;
 /// };
@@ -43012,10 +43012,10 @@ pub enum TypeVariant {
     LedgerKeyTtl,
     EnvelopeType,
     UpgradeType,
-    diamcircleValueType,
+    DiamnetValueType,
     LedgerCloseValueSignature,
-    diamcircleValue,
-    diamcircleValueExt,
+    DiamnetValue,
+    DiamnetValueExt,
     LedgerHeaderFlags,
     LedgerHeaderExtensionV1,
     LedgerHeaderExtensionV1Ext,
@@ -43099,7 +43099,7 @@ pub enum TypeVariant {
     FloodAdvert,
     TxDemandVector,
     FloodDemand,
-    diamcircleMessage,
+    DiamnetMessage,
     AuthenticatedMessage,
     AuthenticatedMessageV0,
     LiquidityPoolParameters,
@@ -43441,10 +43441,10 @@ impl TypeVariant {
         TypeVariant::LedgerKeyTtl,
         TypeVariant::EnvelopeType,
         TypeVariant::UpgradeType,
-        TypeVariant::diamcircleValueType,
+        TypeVariant::DiamnetValueType,
         TypeVariant::LedgerCloseValueSignature,
-        TypeVariant::diamcircleValue,
-        TypeVariant::diamcircleValueExt,
+        TypeVariant::DiamnetValue,
+        TypeVariant::DiamnetValueExt,
         TypeVariant::LedgerHeaderFlags,
         TypeVariant::LedgerHeaderExtensionV1,
         TypeVariant::LedgerHeaderExtensionV1Ext,
@@ -43528,7 +43528,7 @@ impl TypeVariant {
         TypeVariant::FloodAdvert,
         TypeVariant::TxDemandVector,
         TypeVariant::FloodDemand,
-        TypeVariant::diamcircleMessage,
+        TypeVariant::DiamnetMessage,
         TypeVariant::AuthenticatedMessage,
         TypeVariant::AuthenticatedMessageV0,
         TypeVariant::LiquidityPoolParameters,
@@ -43868,10 +43868,10 @@ impl TypeVariant {
         "LedgerKeyTtl",
         "EnvelopeType",
         "UpgradeType",
-        "diamcircleValueType",
+        "DiamnetValueType",
         "LedgerCloseValueSignature",
-        "diamcircleValue",
-        "diamcircleValueExt",
+        "DiamnetValue",
+        "DiamnetValueExt",
         "LedgerHeaderFlags",
         "LedgerHeaderExtensionV1",
         "LedgerHeaderExtensionV1Ext",
@@ -43955,7 +43955,7 @@ impl TypeVariant {
         "FloodAdvert",
         "TxDemandVector",
         "FloodDemand",
-        "diamcircleMessage",
+        "DiamnetMessage",
         "AuthenticatedMessage",
         "AuthenticatedMessageV0",
         "LiquidityPoolParameters",
@@ -44301,10 +44301,10 @@ impl TypeVariant {
             Self::LedgerKeyTtl => "LedgerKeyTtl",
             Self::EnvelopeType => "EnvelopeType",
             Self::UpgradeType => "UpgradeType",
-            Self::diamcircleValueType => "diamcircleValueType",
+            Self::DiamnetValueType => "DiamnetValueType",
             Self::LedgerCloseValueSignature => "LedgerCloseValueSignature",
-            Self::diamcircleValue => "diamcircleValue",
-            Self::diamcircleValueExt => "diamcircleValueExt",
+            Self::DiamnetValue => "DiamnetValue",
+            Self::DiamnetValueExt => "DiamnetValueExt",
             Self::LedgerHeaderFlags => "LedgerHeaderFlags",
             Self::LedgerHeaderExtensionV1 => "LedgerHeaderExtensionV1",
             Self::LedgerHeaderExtensionV1Ext => "LedgerHeaderExtensionV1Ext",
@@ -44388,7 +44388,7 @@ impl TypeVariant {
             Self::FloodAdvert => "FloodAdvert",
             Self::TxDemandVector => "TxDemandVector",
             Self::FloodDemand => "FloodDemand",
-            Self::diamcircleMessage => "diamcircleMessage",
+            Self::DiamnetMessage => "DiamnetMessage",
             Self::AuthenticatedMessage => "AuthenticatedMessage",
             Self::AuthenticatedMessageV0 => "AuthenticatedMessageV0",
             Self::LiquidityPoolParameters => "LiquidityPoolParameters",
@@ -44764,10 +44764,10 @@ impl core::str::FromStr for TypeVariant {
             "LedgerKeyTtl" => Ok(Self::LedgerKeyTtl),
             "EnvelopeType" => Ok(Self::EnvelopeType),
             "UpgradeType" => Ok(Self::UpgradeType),
-            "diamcircleValueType" => Ok(Self::diamcircleValueType),
+            "DiamnetValueType" => Ok(Self::DiamnetValueType),
             "LedgerCloseValueSignature" => Ok(Self::LedgerCloseValueSignature),
-            "diamcircleValue" => Ok(Self::diamcircleValue),
-            "diamcircleValueExt" => Ok(Self::diamcircleValueExt),
+            "DiamnetValue" => Ok(Self::DiamnetValue),
+            "DiamnetValueExt" => Ok(Self::DiamnetValueExt),
             "LedgerHeaderFlags" => Ok(Self::LedgerHeaderFlags),
             "LedgerHeaderExtensionV1" => Ok(Self::LedgerHeaderExtensionV1),
             "LedgerHeaderExtensionV1Ext" => Ok(Self::LedgerHeaderExtensionV1Ext),
@@ -44851,7 +44851,7 @@ impl core::str::FromStr for TypeVariant {
             "FloodAdvert" => Ok(Self::FloodAdvert),
             "TxDemandVector" => Ok(Self::TxDemandVector),
             "FloodDemand" => Ok(Self::FloodDemand),
-            "diamcircleMessage" => Ok(Self::diamcircleMessage),
+            "DiamnetMessage" => Ok(Self::DiamnetMessage),
             "AuthenticatedMessage" => Ok(Self::AuthenticatedMessage),
             "AuthenticatedMessageV0" => Ok(Self::AuthenticatedMessageV0),
             "LiquidityPoolParameters" => Ok(Self::LiquidityPoolParameters),
@@ -45210,10 +45210,10 @@ pub enum Type {
     LedgerKeyTtl(Box<LedgerKeyTtl>),
     EnvelopeType(Box<EnvelopeType>),
     UpgradeType(Box<UpgradeType>),
-    diamcircleValueType(Box<diamcircleValueType>),
+    DiamnetValueType(Box<DiamnetValueType>),
     LedgerCloseValueSignature(Box<LedgerCloseValueSignature>),
-    diamcircleValue(Box<diamcircleValue>),
-    diamcircleValueExt(Box<diamcircleValueExt>),
+    DiamnetValue(Box<DiamnetValue>),
+    DiamnetValueExt(Box<DiamnetValueExt>),
     LedgerHeaderFlags(Box<LedgerHeaderFlags>),
     LedgerHeaderExtensionV1(Box<LedgerHeaderExtensionV1>),
     LedgerHeaderExtensionV1Ext(Box<LedgerHeaderExtensionV1Ext>),
@@ -45297,7 +45297,7 @@ pub enum Type {
     FloodAdvert(Box<FloodAdvert>),
     TxDemandVector(Box<TxDemandVector>),
     FloodDemand(Box<FloodDemand>),
-    diamcircleMessage(Box<diamcircleMessage>),
+    DiamnetMessage(Box<DiamnetMessage>),
     AuthenticatedMessage(Box<AuthenticatedMessage>),
     AuthenticatedMessageV0(Box<AuthenticatedMessageV0>),
     LiquidityPoolParameters(Box<LiquidityPoolParameters>),
@@ -45639,10 +45639,10 @@ impl Type {
         TypeVariant::LedgerKeyTtl,
         TypeVariant::EnvelopeType,
         TypeVariant::UpgradeType,
-        TypeVariant::diamcircleValueType,
+        TypeVariant::DiamnetValueType,
         TypeVariant::LedgerCloseValueSignature,
-        TypeVariant::diamcircleValue,
-        TypeVariant::diamcircleValueExt,
+        TypeVariant::DiamnetValue,
+        TypeVariant::DiamnetValueExt,
         TypeVariant::LedgerHeaderFlags,
         TypeVariant::LedgerHeaderExtensionV1,
         TypeVariant::LedgerHeaderExtensionV1Ext,
@@ -45726,7 +45726,7 @@ impl Type {
         TypeVariant::FloodAdvert,
         TypeVariant::TxDemandVector,
         TypeVariant::FloodDemand,
-        TypeVariant::diamcircleMessage,
+        TypeVariant::DiamnetMessage,
         TypeVariant::AuthenticatedMessage,
         TypeVariant::AuthenticatedMessageV0,
         TypeVariant::LiquidityPoolParameters,
@@ -46066,10 +46066,10 @@ impl Type {
         "LedgerKeyTtl",
         "EnvelopeType",
         "UpgradeType",
-        "diamcircleValueType",
+        "DiamnetValueType",
         "LedgerCloseValueSignature",
-        "diamcircleValue",
-        "diamcircleValueExt",
+        "DiamnetValue",
+        "DiamnetValueExt",
         "LedgerHeaderFlags",
         "LedgerHeaderExtensionV1",
         "LedgerHeaderExtensionV1Ext",
@@ -46153,7 +46153,7 @@ impl Type {
         "FloodAdvert",
         "TxDemandVector",
         "FloodDemand",
-        "diamcircleMessage",
+        "DiamnetMessage",
         "AuthenticatedMessage",
         "AuthenticatedMessageV0",
         "LiquidityPoolParameters",
@@ -46995,9 +46995,9 @@ impl Type {
             TypeVariant::UpgradeType => {
                 r.with_limited_depth(|r| Ok(Self::UpgradeType(Box::new(UpgradeType::read_xdr(r)?))))
             }
-            TypeVariant::diamcircleValueType => r.with_limited_depth(|r| {
-                Ok(Self::diamcircleValueType(Box::new(
-                    diamcircleValueType::read_xdr(r)?,
+            TypeVariant::DiamnetValueType => r.with_limited_depth(|r| {
+                Ok(Self::DiamnetValueType(Box::new(
+                    DiamnetValueType::read_xdr(r)?,
                 )))
             }),
             TypeVariant::LedgerCloseValueSignature => r.with_limited_depth(|r| {
@@ -47005,11 +47005,11 @@ impl Type {
                     LedgerCloseValueSignature::read_xdr(r)?,
                 )))
             }),
-            TypeVariant::diamcircleValue => r.with_limited_depth(|r| {
-                Ok(Self::diamcircleValue(Box::new(diamcircleValue::read_xdr(r)?)))
+            TypeVariant::DiamnetValue => r.with_limited_depth(|r| {
+                Ok(Self::DiamnetValue(Box::new(DiamnetValue::read_xdr(r)?)))
             }),
-            TypeVariant::diamcircleValueExt => r.with_limited_depth(|r| {
-                Ok(Self::diamcircleValueExt(Box::new(diamcircleValueExt::read_xdr(
+            TypeVariant::DiamnetValueExt => r.with_limited_depth(|r| {
+                Ok(Self::DiamnetValueExt(Box::new(DiamnetValueExt::read_xdr(
                     r,
                 )?)))
             }),
@@ -47376,8 +47376,8 @@ impl Type {
             TypeVariant::FloodDemand => {
                 r.with_limited_depth(|r| Ok(Self::FloodDemand(Box::new(FloodDemand::read_xdr(r)?))))
             }
-            TypeVariant::diamcircleMessage => r.with_limited_depth(|r| {
-                Ok(Self::diamcircleMessage(Box::new(diamcircleMessage::read_xdr(r)?)))
+            TypeVariant::DiamnetMessage => r.with_limited_depth(|r| {
+                Ok(Self::DiamnetMessage(Box::new(DiamnetMessage::read_xdr(r)?)))
             }),
             TypeVariant::AuthenticatedMessage => r.with_limited_depth(|r| {
                 Ok(Self::AuthenticatedMessage(Box::new(
@@ -48885,21 +48885,21 @@ impl Type {
                 ReadXdrIter::<_, UpgradeType>::new(&mut r.inner, r.limits.clone())
                     .map(|r| r.map(|t| Self::UpgradeType(Box::new(t)))),
             ),
-            TypeVariant::diamcircleValueType => Box::new(
-                ReadXdrIter::<_, diamcircleValueType>::new(&mut r.inner, r.limits.clone())
-                    .map(|r| r.map(|t| Self::diamcircleValueType(Box::new(t)))),
+            TypeVariant::DiamnetValueType => Box::new(
+                ReadXdrIter::<_, DiamnetValueType>::new(&mut r.inner, r.limits.clone())
+                    .map(|r| r.map(|t| Self::DiamnetValueType(Box::new(t)))),
             ),
             TypeVariant::LedgerCloseValueSignature => Box::new(
                 ReadXdrIter::<_, LedgerCloseValueSignature>::new(&mut r.inner, r.limits.clone())
                     .map(|r| r.map(|t| Self::LedgerCloseValueSignature(Box::new(t)))),
             ),
-            TypeVariant::diamcircleValue => Box::new(
-                ReadXdrIter::<_, diamcircleValue>::new(&mut r.inner, r.limits.clone())
-                    .map(|r| r.map(|t| Self::diamcircleValue(Box::new(t)))),
+            TypeVariant::DiamnetValue => Box::new(
+                ReadXdrIter::<_, DiamnetValue>::new(&mut r.inner, r.limits.clone())
+                    .map(|r| r.map(|t| Self::DiamnetValue(Box::new(t)))),
             ),
-            TypeVariant::diamcircleValueExt => Box::new(
-                ReadXdrIter::<_, diamcircleValueExt>::new(&mut r.inner, r.limits.clone())
-                    .map(|r| r.map(|t| Self::diamcircleValueExt(Box::new(t)))),
+            TypeVariant::DiamnetValueExt => Box::new(
+                ReadXdrIter::<_, DiamnetValueExt>::new(&mut r.inner, r.limits.clone())
+                    .map(|r| r.map(|t| Self::DiamnetValueExt(Box::new(t)))),
             ),
             TypeVariant::LedgerHeaderFlags => Box::new(
                 ReadXdrIter::<_, LedgerHeaderFlags>::new(&mut r.inner, r.limits.clone())
@@ -49245,9 +49245,9 @@ impl Type {
                 ReadXdrIter::<_, FloodDemand>::new(&mut r.inner, r.limits.clone())
                     .map(|r| r.map(|t| Self::FloodDemand(Box::new(t)))),
             ),
-            TypeVariant::diamcircleMessage => Box::new(
-                ReadXdrIter::<_, diamcircleMessage>::new(&mut r.inner, r.limits.clone())
-                    .map(|r| r.map(|t| Self::diamcircleMessage(Box::new(t)))),
+            TypeVariant::DiamnetMessage => Box::new(
+                ReadXdrIter::<_, DiamnetMessage>::new(&mut r.inner, r.limits.clone())
+                    .map(|r| r.map(|t| Self::DiamnetMessage(Box::new(t)))),
             ),
             TypeVariant::AuthenticatedMessage => Box::new(
                 ReadXdrIter::<_, AuthenticatedMessage>::new(&mut r.inner, r.limits.clone())
@@ -50783,9 +50783,9 @@ impl Type {
                 ReadXdrIter::<_, Frame<UpgradeType>>::new(&mut r.inner, r.limits.clone())
                     .map(|r| r.map(|t| Self::UpgradeType(Box::new(t.0)))),
             ),
-            TypeVariant::diamcircleValueType => Box::new(
-                ReadXdrIter::<_, Frame<diamcircleValueType>>::new(&mut r.inner, r.limits.clone())
-                    .map(|r| r.map(|t| Self::diamcircleValueType(Box::new(t.0)))),
+            TypeVariant::DiamnetValueType => Box::new(
+                ReadXdrIter::<_, Frame<DiamnetValueType>>::new(&mut r.inner, r.limits.clone())
+                    .map(|r| r.map(|t| Self::DiamnetValueType(Box::new(t.0)))),
             ),
             TypeVariant::LedgerCloseValueSignature => Box::new(
                 ReadXdrIter::<_, Frame<LedgerCloseValueSignature>>::new(
@@ -50794,13 +50794,13 @@ impl Type {
                 )
                 .map(|r| r.map(|t| Self::LedgerCloseValueSignature(Box::new(t.0)))),
             ),
-            TypeVariant::diamcircleValue => Box::new(
-                ReadXdrIter::<_, Frame<diamcircleValue>>::new(&mut r.inner, r.limits.clone())
-                    .map(|r| r.map(|t| Self::diamcircleValue(Box::new(t.0)))),
+            TypeVariant::DiamnetValue => Box::new(
+                ReadXdrIter::<_, Frame<DiamnetValue>>::new(&mut r.inner, r.limits.clone())
+                    .map(|r| r.map(|t| Self::DiamnetValue(Box::new(t.0)))),
             ),
-            TypeVariant::diamcircleValueExt => Box::new(
-                ReadXdrIter::<_, Frame<diamcircleValueExt>>::new(&mut r.inner, r.limits.clone())
-                    .map(|r| r.map(|t| Self::diamcircleValueExt(Box::new(t.0)))),
+            TypeVariant::DiamnetValueExt => Box::new(
+                ReadXdrIter::<_, Frame<DiamnetValueExt>>::new(&mut r.inner, r.limits.clone())
+                    .map(|r| r.map(|t| Self::DiamnetValueExt(Box::new(t.0)))),
             ),
             TypeVariant::LedgerHeaderFlags => Box::new(
                 ReadXdrIter::<_, Frame<LedgerHeaderFlags>>::new(&mut r.inner, r.limits.clone())
@@ -51194,9 +51194,9 @@ impl Type {
                 ReadXdrIter::<_, Frame<FloodDemand>>::new(&mut r.inner, r.limits.clone())
                     .map(|r| r.map(|t| Self::FloodDemand(Box::new(t.0)))),
             ),
-            TypeVariant::diamcircleMessage => Box::new(
-                ReadXdrIter::<_, Frame<diamcircleMessage>>::new(&mut r.inner, r.limits.clone())
-                    .map(|r| r.map(|t| Self::diamcircleMessage(Box::new(t.0)))),
+            TypeVariant::DiamnetMessage => Box::new(
+                ReadXdrIter::<_, Frame<DiamnetMessage>>::new(&mut r.inner, r.limits.clone())
+                    .map(|r| r.map(|t| Self::DiamnetMessage(Box::new(t.0)))),
             ),
             TypeVariant::AuthenticatedMessage => Box::new(
                 ReadXdrIter::<_, Frame<AuthenticatedMessage>>::new(&mut r.inner, r.limits.clone())
@@ -52778,21 +52778,21 @@ impl Type {
                 ReadXdrIter::<_, UpgradeType>::new(dec, r.limits.clone())
                     .map(|r| r.map(|t| Self::UpgradeType(Box::new(t)))),
             ),
-            TypeVariant::diamcircleValueType => Box::new(
-                ReadXdrIter::<_, diamcircleValueType>::new(dec, r.limits.clone())
-                    .map(|r| r.map(|t| Self::diamcircleValueType(Box::new(t)))),
+            TypeVariant::DiamnetValueType => Box::new(
+                ReadXdrIter::<_, DiamnetValueType>::new(dec, r.limits.clone())
+                    .map(|r| r.map(|t| Self::DiamnetValueType(Box::new(t)))),
             ),
             TypeVariant::LedgerCloseValueSignature => Box::new(
                 ReadXdrIter::<_, LedgerCloseValueSignature>::new(dec, r.limits.clone())
                     .map(|r| r.map(|t| Self::LedgerCloseValueSignature(Box::new(t)))),
             ),
-            TypeVariant::diamcircleValue => Box::new(
-                ReadXdrIter::<_, diamcircleValue>::new(dec, r.limits.clone())
-                    .map(|r| r.map(|t| Self::diamcircleValue(Box::new(t)))),
+            TypeVariant::DiamnetValue => Box::new(
+                ReadXdrIter::<_, DiamnetValue>::new(dec, r.limits.clone())
+                    .map(|r| r.map(|t| Self::DiamnetValue(Box::new(t)))),
             ),
-            TypeVariant::diamcircleValueExt => Box::new(
-                ReadXdrIter::<_, diamcircleValueExt>::new(dec, r.limits.clone())
-                    .map(|r| r.map(|t| Self::diamcircleValueExt(Box::new(t)))),
+            TypeVariant::DiamnetValueExt => Box::new(
+                ReadXdrIter::<_, DiamnetValueExt>::new(dec, r.limits.clone())
+                    .map(|r| r.map(|t| Self::DiamnetValueExt(Box::new(t)))),
             ),
             TypeVariant::LedgerHeaderFlags => Box::new(
                 ReadXdrIter::<_, LedgerHeaderFlags>::new(dec, r.limits.clone())
@@ -53126,9 +53126,9 @@ impl Type {
                 ReadXdrIter::<_, FloodDemand>::new(dec, r.limits.clone())
                     .map(|r| r.map(|t| Self::FloodDemand(Box::new(t)))),
             ),
-            TypeVariant::diamcircleMessage => Box::new(
-                ReadXdrIter::<_, diamcircleMessage>::new(dec, r.limits.clone())
-                    .map(|r| r.map(|t| Self::diamcircleMessage(Box::new(t)))),
+            TypeVariant::DiamnetMessage => Box::new(
+                ReadXdrIter::<_, DiamnetMessage>::new(dec, r.limits.clone())
+                    .map(|r| r.map(|t| Self::DiamnetMessage(Box::new(t)))),
             ),
             TypeVariant::AuthenticatedMessage => Box::new(
                 ReadXdrIter::<_, AuthenticatedMessage>::new(dec, r.limits.clone())
@@ -54280,17 +54280,17 @@ impl Type {
             TypeVariant::UpgradeType => {
                 Ok(Self::UpgradeType(Box::new(serde_json::from_reader(r)?)))
             }
-            TypeVariant::diamcircleValueType => Ok(Self::diamcircleValueType(Box::new(
+            TypeVariant::DiamnetValueType => Ok(Self::DiamnetValueType(Box::new(
                 serde_json::from_reader(r)?,
             ))),
             TypeVariant::LedgerCloseValueSignature => Ok(Self::LedgerCloseValueSignature(
                 Box::new(serde_json::from_reader(r)?),
             )),
-            TypeVariant::diamcircleValue => {
-                Ok(Self::diamcircleValue(Box::new(serde_json::from_reader(r)?)))
+            TypeVariant::DiamnetValue => {
+                Ok(Self::DiamnetValue(Box::new(serde_json::from_reader(r)?)))
             }
-            TypeVariant::diamcircleValueExt => {
-                Ok(Self::diamcircleValueExt(Box::new(serde_json::from_reader(r)?)))
+            TypeVariant::DiamnetValueExt => {
+                Ok(Self::DiamnetValueExt(Box::new(serde_json::from_reader(r)?)))
             }
             TypeVariant::LedgerHeaderFlags => Ok(Self::LedgerHeaderFlags(Box::new(
                 serde_json::from_reader(r)?,
@@ -54523,8 +54523,8 @@ impl Type {
             TypeVariant::FloodDemand => {
                 Ok(Self::FloodDemand(Box::new(serde_json::from_reader(r)?)))
             }
-            TypeVariant::diamcircleMessage => {
-                Ok(Self::diamcircleMessage(Box::new(serde_json::from_reader(r)?)))
+            TypeVariant::DiamnetMessage => {
+                Ok(Self::DiamnetMessage(Box::new(serde_json::from_reader(r)?)))
             }
             TypeVariant::AuthenticatedMessage => Ok(Self::AuthenticatedMessage(Box::new(
                 serde_json::from_reader(r)?,
@@ -55188,10 +55188,10 @@ impl Type {
             Self::LedgerKeyTtl(ref v) => v.as_ref(),
             Self::EnvelopeType(ref v) => v.as_ref(),
             Self::UpgradeType(ref v) => v.as_ref(),
-            Self::diamcircleValueType(ref v) => v.as_ref(),
+            Self::DiamnetValueType(ref v) => v.as_ref(),
             Self::LedgerCloseValueSignature(ref v) => v.as_ref(),
-            Self::diamcircleValue(ref v) => v.as_ref(),
-            Self::diamcircleValueExt(ref v) => v.as_ref(),
+            Self::DiamnetValue(ref v) => v.as_ref(),
+            Self::DiamnetValueExt(ref v) => v.as_ref(),
             Self::LedgerHeaderFlags(ref v) => v.as_ref(),
             Self::LedgerHeaderExtensionV1(ref v) => v.as_ref(),
             Self::LedgerHeaderExtensionV1Ext(ref v) => v.as_ref(),
@@ -55275,7 +55275,7 @@ impl Type {
             Self::FloodAdvert(ref v) => v.as_ref(),
             Self::TxDemandVector(ref v) => v.as_ref(),
             Self::FloodDemand(ref v) => v.as_ref(),
-            Self::diamcircleMessage(ref v) => v.as_ref(),
+            Self::DiamnetMessage(ref v) => v.as_ref(),
             Self::AuthenticatedMessage(ref v) => v.as_ref(),
             Self::AuthenticatedMessageV0(ref v) => v.as_ref(),
             Self::LiquidityPoolParameters(ref v) => v.as_ref(),
@@ -55626,10 +55626,10 @@ impl Type {
             Self::LedgerKeyTtl(_) => "LedgerKeyTtl",
             Self::EnvelopeType(_) => "EnvelopeType",
             Self::UpgradeType(_) => "UpgradeType",
-            Self::diamcircleValueType(_) => "diamcircleValueType",
+            Self::DiamnetValueType(_) => "DiamnetValueType",
             Self::LedgerCloseValueSignature(_) => "LedgerCloseValueSignature",
-            Self::diamcircleValue(_) => "diamcircleValue",
-            Self::diamcircleValueExt(_) => "diamcircleValueExt",
+            Self::DiamnetValue(_) => "DiamnetValue",
+            Self::DiamnetValueExt(_) => "DiamnetValueExt",
             Self::LedgerHeaderFlags(_) => "LedgerHeaderFlags",
             Self::LedgerHeaderExtensionV1(_) => "LedgerHeaderExtensionV1",
             Self::LedgerHeaderExtensionV1Ext(_) => "LedgerHeaderExtensionV1Ext",
@@ -55713,7 +55713,7 @@ impl Type {
             Self::FloodAdvert(_) => "FloodAdvert",
             Self::TxDemandVector(_) => "TxDemandVector",
             Self::FloodDemand(_) => "FloodDemand",
-            Self::diamcircleMessage(_) => "diamcircleMessage",
+            Self::DiamnetMessage(_) => "DiamnetMessage",
             Self::AuthenticatedMessage(_) => "AuthenticatedMessage",
             Self::AuthenticatedMessageV0(_) => "AuthenticatedMessageV0",
             Self::LiquidityPoolParameters(_) => "LiquidityPoolParameters",
@@ -56088,10 +56088,10 @@ impl Type {
             Self::LedgerKeyTtl(_) => TypeVariant::LedgerKeyTtl,
             Self::EnvelopeType(_) => TypeVariant::EnvelopeType,
             Self::UpgradeType(_) => TypeVariant::UpgradeType,
-            Self::diamcircleValueType(_) => TypeVariant::diamcircleValueType,
+            Self::DiamnetValueType(_) => TypeVariant::DiamnetValueType,
             Self::LedgerCloseValueSignature(_) => TypeVariant::LedgerCloseValueSignature,
-            Self::diamcircleValue(_) => TypeVariant::diamcircleValue,
-            Self::diamcircleValueExt(_) => TypeVariant::diamcircleValueExt,
+            Self::DiamnetValue(_) => TypeVariant::DiamnetValue,
+            Self::DiamnetValueExt(_) => TypeVariant::DiamnetValueExt,
             Self::LedgerHeaderFlags(_) => TypeVariant::LedgerHeaderFlags,
             Self::LedgerHeaderExtensionV1(_) => TypeVariant::LedgerHeaderExtensionV1,
             Self::LedgerHeaderExtensionV1Ext(_) => TypeVariant::LedgerHeaderExtensionV1Ext,
@@ -56181,7 +56181,7 @@ impl Type {
             Self::FloodAdvert(_) => TypeVariant::FloodAdvert,
             Self::TxDemandVector(_) => TypeVariant::TxDemandVector,
             Self::FloodDemand(_) => TypeVariant::FloodDemand,
-            Self::diamcircleMessage(_) => TypeVariant::diamcircleMessage,
+            Self::DiamnetMessage(_) => TypeVariant::DiamnetMessage,
             Self::AuthenticatedMessage(_) => TypeVariant::AuthenticatedMessage,
             Self::AuthenticatedMessageV0(_) => TypeVariant::AuthenticatedMessageV0,
             Self::LiquidityPoolParameters(_) => TypeVariant::LiquidityPoolParameters,
@@ -56571,10 +56571,10 @@ impl WriteXdr for Type {
             Self::LedgerKeyTtl(v) => v.write_xdr(w),
             Self::EnvelopeType(v) => v.write_xdr(w),
             Self::UpgradeType(v) => v.write_xdr(w),
-            Self::diamcircleValueType(v) => v.write_xdr(w),
+            Self::DiamnetValueType(v) => v.write_xdr(w),
             Self::LedgerCloseValueSignature(v) => v.write_xdr(w),
-            Self::diamcircleValue(v) => v.write_xdr(w),
-            Self::diamcircleValueExt(v) => v.write_xdr(w),
+            Self::DiamnetValue(v) => v.write_xdr(w),
+            Self::DiamnetValueExt(v) => v.write_xdr(w),
             Self::LedgerHeaderFlags(v) => v.write_xdr(w),
             Self::LedgerHeaderExtensionV1(v) => v.write_xdr(w),
             Self::LedgerHeaderExtensionV1Ext(v) => v.write_xdr(w),
@@ -56658,7 +56658,7 @@ impl WriteXdr for Type {
             Self::FloodAdvert(v) => v.write_xdr(w),
             Self::TxDemandVector(v) => v.write_xdr(w),
             Self::FloodDemand(v) => v.write_xdr(w),
-            Self::diamcircleMessage(v) => v.write_xdr(w),
+            Self::DiamnetMessage(v) => v.write_xdr(w),
             Self::AuthenticatedMessage(v) => v.write_xdr(w),
             Self::AuthenticatedMessageV0(v) => v.write_xdr(w),
             Self::LiquidityPoolParameters(v) => v.write_xdr(w),

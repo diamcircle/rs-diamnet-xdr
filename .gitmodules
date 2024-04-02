@@ -1,8 +1,8 @@
 [submodule "xdr/next"]
 	path = xdr/next
-	url = https://github.com/diamcircle/diamcircle-xdr
+	url = https://github.com/diamcircle/Diamnet-xdr
 	branch = next
 [submodule "xdr/curr"]
 	path = xdr/curr
-	url = https://github.com/diamcircle/diamcircle-xdr
+	url = https://github.com/diamcircle/Diamnet-xdr
 	branch = curr

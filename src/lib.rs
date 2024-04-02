@@ -6,13 +6,13 @@
 #![allow(clippy::tabs_in_doc_comments)]
 #![allow(clippy::doc_markdown)]
 
-//! Library and CLI containing types and functionality for working with diamcircle
+//! Library and CLI containing types and functionality for working with Diamnet
 //! XDR.
 //!
-//! Types are generated from XDR definitions hosted at [diamcircle/diamcircle-xdr]
+//! Types are generated from XDR definitions hosted at [Diamnet/Diamnet-xdr]
 //! using [xdrgen].
 //!
-//! [diamcircle/diamcircle-xdr]: https://github.com/diamcircle/diamcircle-xdr
+//! [Diamnet/Diamnet-xdr]: https://github.com/diamcircle/Diamnet-xdr
 //! [xdrgen]: https://github.com/diamcircle/xdrgen
 //!
 //! ## Usage
@@ -21,7 +21,7 @@
 //! To use the library, include in your toml:
 //!
 //! ```toml
-//! diamcircle-xdr = { version = "...", default-features = true, features = [] }
+//! Diamnet-xdr = { version = "...", default-features = true, features = [] }
 //! ```
 //!
 //! #### Features
@@ -44,9 +44,9 @@
 //! lifetime values. No encode or decode capability exists. Encode and decode
 //! capability will be added in [#47].
 //!
-//! [#39]: https://github.com/diamcircle/rs-diamcircle-xdr/issues/39
-//! [#46]: https://github.com/diamcircle/rs-diamcircle-xdr/issues/46
-//! [#47]: https://github.com/diamcircle/rs-diamcircle-xdr/issues/47
+//! [#39]: https://github.com/diamcircle/rs-diamnet-xdr/issues/39
+//! [#46]: https://github.com/diamcircle/rs-diamnet-xdr/issues/46
+//! [#47]: https://github.com/diamcircle/rs-diamnet-xdr/issues/47
 //!
 //! Ancillary functionality:
 //!
@@ -57,8 +57,8 @@
 //!
 //! Channels of XDR:
 //!
-//! - `curr` – XDR types built from the `diamcircle/diamcircle-xdr` `curr` branch.
-//! - `next` – XDR types built from the `diamcircle/diamcircle-xdr` `next` branch.
+//! - `curr` – XDR types built from the `Diamnet/Diamnet-xdr` `curr` branch.
+//! - `next` – XDR types built from the `Diamnet/Diamnet-xdr` `next` branch.
 //!
 //! If a single channel is enabled the types are available at the root of the
 //! crate. If multiple channels are enabled they are available in modules at
@@ -69,28 +69,28 @@
 //! To use the CLI:
 //!
 //! ```console
-//! cargo install --locked diamcircle-xdr --version ... --features cli
+//! cargo install --locked Diamnet-xdr --version ... --features cli
 //! ```
 //!
 //! #### Examples
 //!
 //! Parse a `TransactionEnvelope`:
 //! ```console
-//! diamcircle-xdr decode --type TransactionEnvelope << -
+//! Diamnet-xdr decode --type TransactionEnvelope << -
 //! AAAAA...
 //! -
 //! ```
 //!
 //! Parse a `ScSpecEntry` stream from a contract:
 //! ```console
-//! diamcircle-xdr +next decode --type ScSpecEntry --input stream-base64 --output json-formatted << -
+//! Diamnet-xdr +next decode --type ScSpecEntry --input stream-base64 --output json-formatted << -
 //! AAAAA...
 //! -
 //! ```
 //!
 //! Parse a `BucketEntry` framed stream from a bucket file:
 //! ```console
-//! diamcircle-xdr decode --type BucketEntry --input stream-framed --output json-formatted bucket.xdr
+//! Diamnet-xdr decode --type BucketEntry --input stream-framed --output json-formatted bucket.xdr
 //! ```
 
 #[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord, Hash)]

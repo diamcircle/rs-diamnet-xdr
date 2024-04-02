@@ -14,7 +14,7 @@ impl ScMap {
             .map(TryInto::try_into)
             .collect::<Result<Vec<_>, _>>()
             .map_err(|_| Error::Invalid)?;
-        // TODO: Add tests that prove order consistency of ScVal with RawVal. https://github.com/diamcircle/rs-diamcircle-xdr/issues/117
+        // TODO: Add tests that prove order consistency of ScVal with RawVal. https://github.com/diamcircle/rs-diamnet-xdr/issues/117
         v.sort_by(|a, b| a.key.cmp(&b.key));
         let m = ScMap(v.try_into()?);
         // `validate` will further check that there are no duplicates.

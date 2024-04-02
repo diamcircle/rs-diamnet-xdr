@@ -481,7 +481,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "diamcircle-strkey"
+name = "Diamnet-strkey"
 version = "0.0.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "12d2bf45e114117ea91d820a846fd1afbe3ba7d717988fee094ce8227a3bf8bd"
@@ -492,7 +492,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "diamcircle-xdr"
+name = "Diamnet-xdr"
 version = "20.1.0"
 dependencies = [
  "arbitrary",
@@ -504,7 +504,7 @@ dependencies = [
  "serde",
  "serde_json",
  "serde_with",
- "diamcircle-strkey",
+ "Diamnet-strkey",
  "thiserror",
 ]
 

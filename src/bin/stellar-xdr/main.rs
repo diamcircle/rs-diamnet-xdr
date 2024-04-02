@@ -1,6 +1,6 @@
 use clap::Error;
 use std::env;
-use diamcircle_xdr::cli;
+use Diamnet_xdr::cli;
 
 fn main() {
     if let Err(e) = cli::run(env::args_os()) {
