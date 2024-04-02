@@ -1,7 +1,7 @@
 #![cfg(all(feature = "next", feature = "arbitrary"))]
 
 use arbitrary::{Arbitrary, Unstructured};
-use Diamnet_xdr::next::ScMap;
+use diamnet_xdr::next::ScMap;
 
 #[test]
 fn arb() {

@@ -5,13 +5,13 @@
 #![cfg(all(feature = "std", feature = "base64"))]
 
 #[cfg(feature = "curr")]
-use Diamnet_xdr::curr as Diamnet_xdr;
+use diamnet_xdr::curr as diamnet_xdr;
 #[cfg(feature = "next")]
-use Diamnet_xdr::next as Diamnet_xdr;
+use diamnet_xdr::next as diamnet_xdr;
 
 use std::io::{self, Cursor};
-use Diamnet_xdr::Error;
-use Diamnet_xdr::{Limited, Limits, ReadXdr, WriteXdr};
+use diamnet_xdr::Error;
+use diamnet_xdr::{Limited, Limits, ReadXdr, WriteXdr};
 
 #[test]
 fn test_read_interrupts_and_residuals() -> Result<(), Error> {

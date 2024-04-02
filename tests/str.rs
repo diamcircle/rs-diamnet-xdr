@@ -1,9 +1,9 @@
 #![cfg(feature = "curr")]
 #![cfg(feature = "std")]
 
-use Diamnet_xdr::curr as Diamnet_xdr;
+use diamnet_xdr::curr as diamnet_xdr;
 
-use Diamnet_xdr::{
+use diamnet_xdr::{
     AccountId, AssetCode, AssetCode12, AssetCode4, Error, Hash, MuxedAccount, MuxedAccountMed25519,
     NodeId, PublicKey, ScAddress, SignerKey, SignerKeyEd25519SignedPayload, Uint256,
 };

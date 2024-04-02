@@ -4,23 +4,23 @@
 ))]
 
 #[cfg(feature = "curr")]
-use Diamnet_xdr::curr as Diamnet_xdr;
+use diamnet_xdr::curr as diamnet_xdr;
 #[cfg(feature = "next")]
-use Diamnet_xdr::next as Diamnet_xdr;
+use diamnet_xdr::next as diamnet_xdr;
 
-use Diamnet_xdr::{
+use diamnet_xdr::{
     Error, Memo, MuxedAccount, Preconditions, SequenceNumber, Transaction, TransactionEnvelope,
     TransactionExt, TransactionV1Envelope, Uint256,
 };
 #[cfg(all(feature = "std", feature = "base64"))]
-use Diamnet_xdr::{Limits, Type, TypeVariant};
+use diamnet_xdr::{Limits, Type, TypeVariant};
 
 #[cfg(all(feature = "std", feature = "base64"))]
 #[test]
 fn test_build_small_tx_with_std() -> Result<(), Error> {
     use std::str::FromStr;
 
-    use Diamnet_xdr::WriteXdr;
+    use diamnet_xdr::WriteXdr;
 
     let te = TransactionEnvelope::Tx(TransactionV1Envelope {
         tx: Transaction {

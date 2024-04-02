@@ -1,4 +1,4 @@
 #[test]
 fn version() {
-    std::println!("{:?}", Diamnet_xdr::VERSION);
+    std::println!("{:?}", diamnet_xdr::VERSION);
 }
