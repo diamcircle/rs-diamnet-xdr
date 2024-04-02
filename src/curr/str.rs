@@ -25,8 +25,8 @@ use super::{
     NodeId, PublicKey, ScAddress, SignerKey, SignerKeyEd25519SignedPayload, Uint256,
 };
 
-impl From<Diamnet_strkey::DecodeError> for Error {
-    fn from(_: Diamnet_strkey::DecodeError) -> Self {
+impl From<diamnet_strkey::DecodeError> for Error {
+    fn from(_: diamnet_strkey::DecodeError) -> Self {
         Error::Invalid
     }
 }
@@ -35,7 +35,7 @@ impl core::fmt::Display for PublicKey {
     fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         match self {
             PublicKey::PublicKeyTypeEd25519(Uint256(k)) => {
-                let k = Diamnet_strkey::ed25519::PublicKey::from_payload(k)
+                let k = diamnet_strkey::ed25519::PublicKey::from_payload(k)
                     .map_err(|_| core::fmt::Error)?;
                 let s = k.to_string();
                 f.write_str(&s)?;
@@ -48,8 +48,8 @@ impl core::fmt::Display for PublicKey {
 impl core::str::FromStr for PublicKey {
     type Err = Error;
     fn from_str(s: &str) -> core::result::Result<Self, Self::Err> {
-        let Diamnet_strkey::ed25519::PublicKey(k) =
-            Diamnet_strkey::ed25519::PublicKey::from_str(s)?;
+        let diamnet_strkey::ed25519::PublicKey(k) =
+            diamnet_strkey::ed25519::PublicKey::from_str(s)?;
         Ok(PublicKey::PublicKeyTypeEd25519(Uint256(k)))
     }
 }
@@ -73,7 +73,7 @@ impl core::fmt::Display for MuxedAccountMed25519 {
             ed25519: Uint256(ed25519),
             id,
         } = self;
-        let k = Diamnet_strkey::ed25519::MuxedAccount {
+        let k = diamnet_strkey::ed25519::MuxedAccount {
             ed25519: *ed25519,
             id: *id,
         };
@@ -86,8 +86,8 @@ impl core::fmt::Display for MuxedAccountMed25519 {
 impl core::str::FromStr for MuxedAccountMed25519 {
     type Err = Error;
     fn from_str(s: &str) -> core::result::Result<Self, Self::Err> {
-        let Diamnet_strkey::ed25519::MuxedAccount { ed25519, id } =
-            Diamnet_strkey::ed25519::MuxedAccount::from_str(s)?;
+        let diamnet_strkey::ed25519::MuxedAccount { ed25519, id } =
+            diamnet_strkey::ed25519::MuxedAccount::from_str(s)?;
         Ok(MuxedAccountMed25519 {
             ed25519: Uint256(ed25519),
             id,
@@ -98,22 +98,22 @@ impl core::str::FromStr for MuxedAccountMed25519 {
 impl core::str::FromStr for MuxedAccount {
     type Err = Error;
     fn from_str(s: &str) -> core::result::Result<Self, Self::Err> {
-        let strkey = Diamnet_strkey::Strkey::from_str(s)?;
+        let strkey = diamnet_strkey::Strkey::from_str(s)?;
         match strkey {
-            Diamnet_strkey::Strkey::PublicKeyEd25519(Diamnet_strkey::ed25519::PublicKey(k)) => {
+            diamnet_strkey::Strkey::PublicKeyEd25519(diamnet_strkey::ed25519::PublicKey(k)) => {
                 Ok(MuxedAccount::Ed25519(Uint256(k)))
             }
-            Diamnet_strkey::Strkey::MuxedAccountEd25519(
-                Diamnet_strkey::ed25519::MuxedAccount { ed25519, id },
+            diamnet_strkey::Strkey::MuxedAccountEd25519(
+                diamnet_strkey::ed25519::MuxedAccount { ed25519, id },
             ) => Ok(MuxedAccount::MuxedEd25519(MuxedAccountMed25519 {
                 ed25519: Uint256(ed25519),
                 id,
             })),
-            Diamnet_strkey::Strkey::PrivateKeyEd25519(_)
-            | Diamnet_strkey::Strkey::PreAuthTx(_)
-            | Diamnet_strkey::Strkey::HashX(_)
-            | Diamnet_strkey::Strkey::SignedPayloadEd25519(_)
-            | Diamnet_strkey::Strkey::Contract(_) => Err(Error::Invalid),
+            diamnet_strkey::Strkey::PrivateKeyEd25519(_)
+            | diamnet_strkey::Strkey::PreAuthTx(_)
+            | diamnet_strkey::Strkey::HashX(_)
+            | diamnet_strkey::Strkey::SignedPayloadEd25519(_)
+            | diamnet_strkey::Strkey::Contract(_) => Err(Error::Invalid),
         }
     }
 }
@@ -122,7 +122,7 @@ impl core::fmt::Display for MuxedAccount {
     fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         match self {
             MuxedAccount::Ed25519(Uint256(k)) => {
-                let k = Diamnet_strkey::ed25519::PublicKey(*k);
+                let k = diamnet_strkey::ed25519::PublicKey(*k);
                 let s = k.to_string();
                 f.write_str(&s)?;
             }
@@ -151,7 +151,7 @@ impl core::fmt::Display for SignerKeyEd25519SignedPayload {
             ed25519: Uint256(ed25519),
             payload,
         } = self;
-        let k = Diamnet_strkey::ed25519::SignedPayload {
+        let k = diamnet_strkey::ed25519::SignedPayload {
             ed25519: *ed25519,
             payload: payload.into(),
         };
@@ -164,8 +164,8 @@ impl core::fmt::Display for SignerKeyEd25519SignedPayload {
 impl core::str::FromStr for SignerKeyEd25519SignedPayload {
     type Err = Error;
     fn from_str(s: &str) -> core::result::Result<Self, Self::Err> {
-        let Diamnet_strkey::ed25519::SignedPayload { ed25519, payload } =
-            Diamnet_strkey::ed25519::SignedPayload::from_str(s)?;
+        let diamnet_strkey::ed25519::SignedPayload { ed25519, payload } =
+            diamnet_strkey::ed25519::SignedPayload::from_str(s)?;
         Ok(SignerKeyEd25519SignedPayload {
             ed25519: Uint256(ed25519),
             payload: payload.try_into()?,
@@ -176,28 +176,28 @@ impl core::str::FromStr for SignerKeyEd25519SignedPayload {
 impl core::str::FromStr for SignerKey {
     type Err = Error;
     fn from_str(s: &str) -> core::result::Result<Self, Self::Err> {
-        let strkey = Diamnet_strkey::Strkey::from_str(s)?;
+        let strkey = diamnet_strkey::Strkey::from_str(s)?;
         match strkey {
-            Diamnet_strkey::Strkey::PublicKeyEd25519(Diamnet_strkey::ed25519::PublicKey(k)) => {
+            diamnet_strkey::Strkey::PublicKeyEd25519(diamnet_strkey::ed25519::PublicKey(k)) => {
                 Ok(SignerKey::Ed25519(Uint256(k)))
             }
-            Diamnet_strkey::Strkey::PreAuthTx(Diamnet_strkey::PreAuthTx(h)) => {
+            diamnet_strkey::Strkey::PreAuthTx(diamnet_strkey::PreAuthTx(h)) => {
                 Ok(SignerKey::PreAuthTx(Uint256(h)))
             }
-            Diamnet_strkey::Strkey::HashX(Diamnet_strkey::HashX(h)) => {
+            diamnet_strkey::Strkey::HashX(diamnet_strkey::HashX(h)) => {
                 Ok(SignerKey::HashX(Uint256(h)))
             }
-            Diamnet_strkey::Strkey::SignedPayloadEd25519(
-                Diamnet_strkey::ed25519::SignedPayload { ed25519, payload },
+            diamnet_strkey::Strkey::SignedPayloadEd25519(
+                diamnet_strkey::ed25519::SignedPayload { ed25519, payload },
             ) => Ok(SignerKey::Ed25519SignedPayload(
                 SignerKeyEd25519SignedPayload {
                     ed25519: Uint256(ed25519),
                     payload: payload.try_into()?,
                 },
             )),
-            Diamnet_strkey::Strkey::PrivateKeyEd25519(_)
-            | Diamnet_strkey::Strkey::Contract(_)
-            | Diamnet_strkey::Strkey::MuxedAccountEd25519(_) => Err(Error::Invalid),
+            diamnet_strkey::Strkey::PrivateKeyEd25519(_)
+            | diamnet_strkey::Strkey::Contract(_)
+            | diamnet_strkey::Strkey::MuxedAccountEd25519(_) => Err(Error::Invalid),
         }
     }
 }
@@ -206,17 +206,17 @@ impl core::fmt::Display for SignerKey {
     fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         match self {
             SignerKey::Ed25519(Uint256(k)) => {
-                let k = Diamnet_strkey::ed25519::PublicKey(*k);
+                let k = diamnet_strkey::ed25519::PublicKey(*k);
                 let s = k.to_string();
                 f.write_str(&s)?;
             }
             SignerKey::PreAuthTx(Uint256(h)) => {
-                let k = Diamnet_strkey::PreAuthTx(*h);
+                let k = diamnet_strkey::PreAuthTx(*h);
                 let s = k.to_string();
                 f.write_str(&s)?;
             }
             SignerKey::HashX(Uint256(h)) => {
-                let k = Diamnet_strkey::HashX(*h);
+                let k = diamnet_strkey::HashX(*h);
                 let s = k.to_string();
                 f.write_str(&s)?;
             }
@@ -229,19 +229,19 @@ impl core::fmt::Display for SignerKey {
 impl core::str::FromStr for ScAddress {
     type Err = Error;
     fn from_str(s: &str) -> core::result::Result<Self, Self::Err> {
-        let strkey = Diamnet_strkey::Strkey::from_str(s)?;
+        let strkey = diamnet_strkey::Strkey::from_str(s)?;
         match strkey {
-            Diamnet_strkey::Strkey::PublicKeyEd25519(Diamnet_strkey::ed25519::PublicKey(k)) => Ok(
+            diamnet_strkey::Strkey::PublicKeyEd25519(diamnet_strkey::ed25519::PublicKey(k)) => Ok(
                 ScAddress::Account(AccountId(PublicKey::PublicKeyTypeEd25519(Uint256(k)))),
             ),
-            Diamnet_strkey::Strkey::Contract(Diamnet_strkey::Contract(h)) => {
+            diamnet_strkey::Strkey::Contract(diamnet_strkey::Contract(h)) => {
                 Ok(ScAddress::Contract(Hash(h)))
             }
-            Diamnet_strkey::Strkey::MuxedAccountEd25519(_)
-            | Diamnet_strkey::Strkey::PrivateKeyEd25519(_)
-            | Diamnet_strkey::Strkey::PreAuthTx(_)
-            | Diamnet_strkey::Strkey::HashX(_)
-            | Diamnet_strkey::Strkey::SignedPayloadEd25519(_) => Err(Error::Invalid),
+            diamnet_strkey::Strkey::MuxedAccountEd25519(_)
+            | diamnet_strkey::Strkey::PrivateKeyEd25519(_)
+            | diamnet_strkey::Strkey::PreAuthTx(_)
+            | diamnet_strkey::Strkey::HashX(_)
+            | diamnet_strkey::Strkey::SignedPayloadEd25519(_) => Err(Error::Invalid),
         }
     }
 }
@@ -251,7 +251,7 @@ impl core::fmt::Display for ScAddress {
         match self {
             ScAddress::Account(a) => a.fmt(f)?,
             ScAddress::Contract(Hash(h)) => {
-                let k = Diamnet_strkey::Contract(*h);
+                let k = diamnet_strkey::Contract(*h);
                 let s = k.to_string();
                 f.write_str(&s)?;
             }
